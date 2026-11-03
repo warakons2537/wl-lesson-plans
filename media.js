@@ -68,6 +68,13 @@ const CSS=`
 .sm{flex:1;border-radius:20px;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;background:var(--surface);border:2px solid var(--line)}
 .sm.yes{border-color:var(--s3);background:var(--s3t)}.sm.no{border-color:#c0392b;background:var(--at)}
 .sm .w{font:700 clamp(26px,8vw,40px) var(--f-head)}
+.ans,.pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.ans{min-height:64px;border:2px dashed var(--line);border-radius:14px;padding:8px;align-items:center}
+.ans.no{border-color:#c0392b;background:var(--at)}.ans.ok{border-color:var(--s3);background:var(--s3t)}
+.chip{min-height:44px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font:600 17px var(--f-head);padding:6px 12px;cursor:pointer}
+.tq{font:600 clamp(19px,5.2vw,26px) var(--f-head);text-align:center}
+.wln{border-bottom:1px dotted #555;min-height:30px}.ws .tx{margin:0;line-height:1.55}
+.cl{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}.cl ol{margin:0;padding-left:1.4em}.cl .rl{list-style:upper-alpha}
 @media (min-width:560px){.vg{grid-template-columns:1fr 1fr}.op{grid-template-columns:1fr 1fr}.mg{grid-template-columns:repeat(4,1fr)}}
 @media print{body>.wrap{display:none!important}
  #mv{position:static!important;display:block!important;height:auto!important;background:#fff!important;color:#000!important}
@@ -79,7 +86,7 @@ function slides(){
   const S=M.slides,n=S.length,i=st.s=Math.max(0,Math.min(n-1,st.s||0)),s=S[i];let h="";
   if(s.t==="title")h=`<div class="em">${s.em}</div><h1 lang="en">${esc(s.en)}</h1><p class="th">${esc(s.th)}</p>${(s.lines||[]).map(l=>`<p class="ln">${esc(l)}</p>`).join("")}`;
   else if(s.t==="big")h=`<div class="em big">${s.em}</div><h1 lang="en">${esc(s.en)}</h1><div>${sp(s.en)}</div><p class="th">${esc(s.th)}</p>`;
-  else if(s.t==="vocab")h=`<div class="vg">${s.items.map(k=>{const w=V[k];return `<div class="vi"><div class="em">${w[2]}</div><div class="en" lang="en">${esc(w[0])}${sp(w[0])}</div><div class="th">${esc(w[1])}</div></div>`}).join("")}</div>`;
+  else if(s.t==="vocab")h=`<div class="vg">${s.items.map(k=>{const w=V[k];return `<div class="vi">${w[2]?`<div class="em">${w[2]}</div>`:""}<div class="en" lang="en">${esc(w[0])}${sp(w[0])}</div><div class="th">${esc(w[1])}</div></div>`}).join("")}</div>`;
   else h=`<h2 lang="en">${esc(s.en)}</h2><p class="th">${esc(s.th||"")}</p><ul class="ls">${s.lines.map(l=>`<li><span lang="en">${esc(l[0])}</span>${sp(l[0])}${l[1]?`<small>${esc(l[1])}</small>`:""}</li>`).join("")}</ul>`;
   $b().innerHTML=`<div class="sl" id="mvsl">${h}</div><div class="mvnav"><button id="mvp" aria-label="ก่อนหน้า" ${i?"":"disabled"}>‹</button><span>${i+1} / ${n}</span><button id="mvn" aria-label="ถัดไป" ${i<n-1?"":"disabled"}>›</button></div>`;
   const go=d=>{st.s=i+d;slides()};
@@ -92,7 +99,7 @@ function slides(){
 
 function cards(){
   const o=st.order||(st.order=range(V.length)),n=o.length,i=st.f=Math.max(0,Math.min(n-1,st.f||0)),w=V[o[i]];
-  $b().innerHTML=`<div class="fc${st.flip?" flip":""}" id="fc"><div class="fcf"><div class="em big">${w[2]}</div><div class="en" lang="en">${esc(w[0])}${sp(w[0])}</div><small>แตะการ์ดเพื่อดูคำแปล</small></div><div class="fcb"><div class="th">${esc(w[1])}</div><div class="en" lang="en">${esc(w[0])}</div><small>แตะการ์ดเพื่อพลิกกลับ</small></div></div>
+  $b().innerHTML=`<div class="fc${st.flip?" flip":""}" id="fc"><div class="fcf">${w[2]?`<div class="em big">${w[2]}</div>`:""}<div class="en" lang="en">${esc(w[0])}${sp(w[0])}</div><small>แตะการ์ดเพื่อดูคำแปล</small></div><div class="fcb"><div class="th">${esc(w[1])}</div><div class="en" lang="en">${esc(w[0])}</div><small>แตะการ์ดเพื่อพลิกกลับ</small></div></div>
   <div class="mvnav"><button id="mvp" aria-label="ก่อนหน้า" ${i?"":"disabled"}>‹</button><span>${i+1} / ${n}</span><button id="mvn" aria-label="ถัดไป" ${i<n-1?"":"disabled"}>›</button></div>
   <div class="row"><button class="bt" id="fcs">🔀 สลับลำดับ</button></div>`;
   const go=d=>{st.f=i+d;st.flip=false;cards()};
@@ -103,6 +110,7 @@ function cards(){
 }
 
 function sheet(){
+  if(M.ws.parts)return partsSheet();
   const W=M.ws,L="ABCDEFGHIJKLMNOP",ord=W.order,letter=v=>L[ord.indexOf(v)];
   $b().innerHTML=`<div class="row mvnp"><button class="bt" id="wsa">👁️ ${st.ans?"ซ่อน":"แสดง"}เฉลย</button><button class="bt pri" id="wsp">🖨️ พิมพ์ใบงาน</button></div>
   <div class="ws${st.ans?" show":""}">
@@ -119,18 +127,42 @@ function sheet(){
   $("wsa").onclick=()=>{st.ans=!st.ans;sheet()};$("wsp").onclick=()=>window.print();
 }
 
+function partsSheet(){
+  const W=M.ws,L="ABCDEFGHIJKLMNOP",ab="abcd",ol=a=>`<ol class="mt">${a.join("")}</ol>`,
+   blank=(a,w)=>`<i class="blank" style="min-width:${w||44}px"><u class="ak" lang="en">${esc(a)}</u></i>`,
+   rot=(a,k)=>a.map((_,i)=>a[(i+k)%a.length]);
+  const part=(p,i)=>{
+    let b="";const tx=(p.text||[]).map(t=>`<p class="tx" lang="en">${esc(t)}</p>`).join("");
+    if(p.k==="pics"){const o=p.ord;
+      b=`<div class="pics">${o.map((v,k)=>`<div class="pic"><b>${L[k]}</b><span>${V[v][2]}</span></div>`).join("")}</div>`+ol(V.map((w,v)=>`<li><span lang="en">${esc(w[0])}</span>${blank(L[o.indexOf(v)])}</li>`))}
+    else if(p.k==="fill")b=(p.bank?`<div class="bank" lang="en">${p.bank.map(x=>`<span>${esc(x)}</span>`).join("")}</div>`:"")+ol(p.items.map(x=>`<li lang="en">${esc(x.q).replace("___",blank(x.a,110))}</li>`));
+    else if(p.k==="tf")b=ol(p.items.map(x=>`<li><span lang="en">${esc(x.q)}</span>${blank(x.a?"T":"F")}</li>`));
+    else if(p.k==="mcq")b=ol(p.items.map(x=>`<li><span lang="en">${esc(x.q)}</span><div class="bank" lang="en">${x.o.map((o,k)=>`<span>${ab[k]}) ${esc(o)}</span>`).join("")}</div>${blank(ab[x.a])}</li>`));
+    else if(p.k==="order")b=ol(p.items.map(x=>`<li><span lang="en">${rot(x.w,2).map(esc).join("  /  ")}</span><div class="wln"><u class="ak" lang="en">${esc(x.a)}</u></div></li>`));
+    else if(p.k==="match"){const n=p.items.length,o=p.ord||p.items.map((_,k)=>(n+2-k)%n);
+      b=`<div class="cl"><ol>${p.items.map((x,k)=>`<li><span lang="en">${esc(x[0])}</span>${blank(L[o.indexOf(k)],36)}</li>`).join("")}</ol><ol class="rl">${o.map(k=>`<li lang="en">${esc(p.items[k][1])}</li>`).join("")}</ol></div>`}
+    else if(p.k==="sort"){const all=[];for(let k=0;all.length<p.boxes.reduce((s,c)=>s+c.items.length,0);k++)p.boxes.forEach(c=>{if(c.items[k])all.push(c.items[k])});
+      b=`<div class="bank" lang="en">${all.map(x=>`<span>${esc(x)}</span>`).join("")}</div><div class="srt">${p.boxes.map(c=>`<div class="box"><h4 lang="en">${esc(c.h)}</h4>${c.items.map(t=>`<div class="ln"><u class="ak" lang="en">${esc(t)}</u></div>`).join("")}</div>`).join("")}</div>`}
+    else b=`<ul class="wl" lang="en">${p.items.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+    return `<div><h3>Part ${L[i]} <small>${esc(p.n||"")}</small></h3>${tx}${b}</div>`};
+  $b().innerHTML=`<div class="row mvnp"><button class="bt" id="wsa">👁️ ${st.ans?"ซ่อน":"แสดง"}เฉลย</button><button class="bt pri" id="wsp">🖨️ พิมพ์ใบงาน</button></div>
+  <div class="ws${st.ans?" show":""}"><div class="wsh"><b>ใบงาน ${esc(W.title)} · อ22102 ภาษาอังกฤษ ม.2</b><span>ชื่อ-สกุล ................................................ ชั้น ม.2 เลขที่ ........ คะแนน ......</span></div>${W.parts.map(part).join("")}</div>`;
+  $("wsa").onclick=()=>{st.ans=!st.ans;sheet()};$("wsp").onclick=()=>window.print();
+}
+
 function game(){
-  const gs=[["match","🔗 จับคู่"],["quiz","❓ ควิซ"],["simon","🙋 Simon says"]];st.g=st.g||"match";
+  const GL={match:"🔗 จับคู่",quiz:"❓ ควิซคำศัพท์",simon:"🙋 Simon says",mcq:"🧠 ควิซเนื้อหา",order:"🧩 เรียงประโยค"};
+  const gs=(M.games||["match","quiz","simon"]).map(k=>[k,GL[k]]);st.g=gs.some(g=>g[0]===st.g)?st.g:gs[0][0];
   $b().innerHTML=`<div class="gtabs">${gs.map(g=>`<button data-g="${g[0]}" class="${g[0]===st.g?"on":""}">${g[1]}</button>`).join("")}</div><div id="gbox" style="display:flex;flex-direction:column;gap:12px;flex:1"></div>`;
   $b().querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>{st.g=b.dataset.g;game()});
-  ({match:gMatch,quiz:gQuiz,simon:gSimon})[st.g]($("gbox"));
+  ({match:gMatch,quiz:gQuiz,simon:gSimon,mcq:gMcq,order:gOrder})[st.g]($("gbox"));
 }
 
 function gMatch(box){
   const pick=shuf(range(V.length)).slice(0,6),tiles=shuf(pick.flatMap(v=>[{v,k:"p"},{v,k:"w"}]));
   let sel=null,done=0,miss=0;
   const head=()=>`<div class="gs" id="gst">แตะภาพ แล้วแตะคำศัพท์ที่ตรงกัน · ผิด ${miss} ครั้ง</div>`;
-  box.innerHTML=head()+`<div class="mg">${tiles.map((t,i)=>`<button class="tl" data-i="${i}">${t.k==="p"?`<span class="em">${V[t.v][2]}</span>`:`<span lang="en">${esc(V[t.v][0])}</span>`}</button>`).join("")}</div>`;
+  box.innerHTML=head()+`<div class="mg">${tiles.map((t,i)=>`<button class="tl" data-i="${i}">${t.k==="p"?(V[t.v][2]?`<span class="em">${V[t.v][2]}</span>`:`<span>${esc(V[t.v][1])}</span>`):`<span lang="en">${esc(V[t.v][0])}</span>`}</button>`).join("")}</div>`;
   const T=box.querySelectorAll(".tl");
   T.forEach(b=>b.onclick=()=>{
     const i=+b.dataset.i;if(b.classList.contains("ok"))return;
@@ -149,7 +181,7 @@ function gQuiz(box){
   const ask=()=>{
     if(q>=qs.length){box.innerHTML=`<div class="sm"><div class="em">🏆</div><div class="w">${score} / ${qs.length}</div></div><div class="row"><button class="bt pri" id="gr">เล่นใหม่</button></div>`;$("gr").onclick=()=>gQuiz(box);return}
     const v=qs[q],opts=shuf([v,...shuf(range(V.length).filter(i=>i!==v)).slice(0,3)]);lock=false;
-    box.innerHTML=`<div class="gs">ข้อ ${q+1} / ${qs.length} · คะแนน ${score}</div><div class="em big">${V[v][2]}</div><div class="op">${opts.map(o=>`<button class="o" data-o="${o}" lang="en">${esc(V[o][0])}</button>`).join("")}</div>`;
+    box.innerHTML=`<div class="gs">ข้อ ${q+1} / ${qs.length} · คะแนน ${score}</div>${V[v][2]?`<div class="em big">${V[v][2]}</div>`:`<div class="tq">${esc(V[v][1])}</div>`}<div class="op">${opts.map(o=>`<button class="o" data-o="${o}" lang="en">${esc(V[o][0])}</button>`).join("")}</div>`;
     box.querySelectorAll(".o").forEach(b=>b.onclick=()=>{if(lock)return;lock=true;const ok=+b.dataset.o===v;
       if(ok){score++;b.classList.add("ok")}else{b.classList.add("no");box.querySelector(`[data-o="${v}"]`).classList.add("ok")}
       say(V[v][0]);setTimeout(()=>{q++;ask()},1200)});
@@ -165,6 +197,39 @@ function gSimon(box){
     $("sn").onclick=()=>{cur={v:Math.random()*V.length|0,sim:Math.random()<.65};draw(cur);speak()};
     $("sr").onclick=speak;$("sh").onclick=()=>{st.hide=!st.hide;draw(cur)};
   };draw(null);
+}
+
+function gMcq(box){
+  const qs=shuf(M.mcq).slice(0,10);let q=0,score=0,lock=false;
+  const ask=()=>{
+    if(q>=qs.length){box.innerHTML=`<div class="sm"><div class="em">🏆</div><div class="w">${score} / ${qs.length}</div></div><div class="row"><button class="bt pri" id="gr">เล่นใหม่</button></div>`;$("gr").onclick=()=>gMcq(box);return}
+    const x=qs[q];lock=false;
+    box.innerHTML=`<div class="gs">ข้อ ${q+1} / ${qs.length} · คะแนน ${score}</div><div class="tq" lang="en">${esc(x.q)}${sp(x.q)}</div>${x.th?`<div class="th" style="text-align:center">${esc(x.th)}</div>`:""}<div class="op">${x.o.map((o,k)=>`<button class="o" data-o="${k}" lang="en">${esc(o)}</button>`).join("")}</div><div class="gs" id="gx"></div>`;
+    box.querySelectorAll(".o").forEach(b=>b.onclick=()=>{if(lock)return;lock=true;const ok=+b.dataset.o===x.a;
+      if(ok){score++;b.classList.add("ok")}else{b.classList.add("no");box.querySelector(`[data-o="${x.a}"]`).classList.add("ok")}
+      if(x.ex)$("gx").textContent=x.ex;setTimeout(()=>{q++;ask()},x.ex?2200:1200)});
+  };ask();
+}
+
+function gOrder(box){
+  const qs=shuf(M.order).slice(0,8);let q=0,score=0;
+  const ask=()=>{
+    if(q>=qs.length){box.innerHTML=`<div class="sm"><div class="em">🏆</div><div class="w">${score} / ${qs.length}</div></div><div class="row"><button class="bt pri" id="gr">เล่นใหม่</button></div>`;$("gr").onclick=()=>gOrder(box);return}
+    const x=qs[q];let pool=shuf(range(x.w.length)),ans=[],tries=0;
+    const draw=(msg,cls)=>{
+      box.innerHTML=`<div class="gs">ข้อ ${q+1} / ${qs.length} · คะแนน ${score}</div>${x.th?`<div class="th" style="text-align:center">${esc(x.th)}</div>`:""}
+      <div class="ans ${cls||""}" lang="en">${ans.length?ans.map(i=>`<button class="chip" data-a="${i}">${esc(x.w[i])}</button>`).join(""):`<small class="th">แตะคำด้านล่างเพื่อเรียงเป็นประโยค</small>`}</div>
+      <div class="pool" lang="en">${pool.map(i=>`<button class="chip" data-p="${i}">${esc(x.w[i])}</button>`).join("")}</div>
+      <div class="gs">${msg||""}</div><div class="row"><button class="bt" id="gc">↺ ล้าง</button><button class="bt pri" id="gk">✔ ตรวจ</button></div>`;
+      box.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{const i=+b.dataset.p;pool=pool.filter(k=>k!==i);ans.push(i);draw()});
+      box.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{const i=+b.dataset.a;ans=ans.filter(k=>k!==i);pool.push(i);draw()});
+      $("gc").onclick=()=>{pool=shuf(range(x.w.length));ans=[];draw()};
+      $("gk").onclick=()=>{
+        if(pool.length)return draw("ยังเรียงไม่ครบ");
+        if(ans.map(i=>x.w[i]).join(" ")===x.a){if(!tries)score++;say(x.a);draw("✅ ถูกต้อง","ok");setTimeout(()=>{q++;ask()},1400)}
+        else{tries++;draw("❌ ยังไม่ถูก ลองเรียงใหม่","no")}};
+    };draw();
+  };ask();
 }
 
 const $=id=>document.getElementById(id),$b=()=>$("mvb");
