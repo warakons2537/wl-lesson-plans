@@ -130,7 +130,9 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-vis
 .lv b{font:700 28px/1.2 var(--f-head)}
 .lv span{font-size:15px;color:var(--muted)}
 .lv:disabled{opacity:.5;cursor:default}
-@media print{.ubar,.home{display:none}}
+.mbtn{width:100%;min-height:52px;border:0;border-radius:14px;background:var(--accent);color:var(--accent-ink);font:700 17px var(--f-head);padding:10px 14px;cursor:pointer}
+.mbtn:disabled{opacity:.6}
+@media print{.ubar,.home,.mbtn{display:none}}
 </style>
 </head>
 <body>

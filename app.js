@@ -10,6 +10,15 @@ const TEACHER="นายวรากร ตรงต่อกิจ";
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const $=id=>document.getElementById(id);
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const MEDIA=["m2u8:8.1"];
+const loadJs=src=>new Promise((ok,no)=>{if(document.querySelector(`script[data-s="${src}"]`))return ok();
+  const s=document.createElement("script");s.src=src;s.dataset.s=src;s.onload=ok;s.onerror=()=>no(new Error(src));document.head.appendChild(s)});
+async function openMedia(p){
+  const b=$("mbtn");if(b)b.disabled=true;
+  try{await loadJs("media.js");await loadJs("data/"+UNIT.k.replace(/^(m\d)u/,"$1-u")+"-media.js");
+    WLMedia.open(UNIT.k,p.id,p.id+" "+p.title)}
+  catch(e){alert("โหลดสื่อการสอนไม่สำเร็จ กรุณาเชื่อมต่ออินเทอร์เน็ตแล้วลองใหม่")}
+  if(b)b.disabled=false}
 
 function render(i){
   const p=PLANS[i], T=UNIT.no;
@@ -37,6 +46,7 @@ function render(i){
    <div class="src">ต้นฉบับ: แผนที่ ${p.src} ${esc(p.srcName)} · ชั่วโมงที่ ${p.h}/${p.hs}</div>
    <div class="meta"><span>${UNIT.mins||60} นาที</span><span>นักเรียน ${esc(UNIT.students||14)} คน</span><span>${esc(p.book)}</span></div>
   </header>
+  ${MEDIA.includes(uKey()+":"+p.id)?'<button class="mbtn" id="mbtn">🎬 สื่อการสอน · สไลด์ บัตรคำ ใบงาน เกม</button>':""}
   <section class="sec"><h2>ตัวชี้วัด</h2><div class="card"><ul class="ind" style="padding:0">${ind}</ul></div></section>
   <section class="sec"><h2>สาระสำคัญ</h2><div class="card">${esc(p.core)}</div></section>
   <section class="sec"><h2>จุดประสงค์</h2><div class="card"><ul class="obj" style="padding:0">${p.obj.map(o=>`<li><span class="kpa ${o[0]}">${o[0]}</span><span>${esc(o[1])}</span></li>`).join("")}</ul></div></section>
@@ -56,6 +66,7 @@ function render(i){
    <div><label for="n3">แนวทางแก้ไข / ข้อเสนอแนะ</label><textarea id="n3" data-k="${key}-n3"></textarea></div>
    <div class="sig"><div class="ln"></div><div>ลงชื่อ ................................................ ครูผู้สอน</div><b>(${TEACHER})</b><div>วันที่ ........ / ........ / ............</div></div>
   </div></section>`;
+  if($("mbtn"))$("mbtn").onclick=()=>openMedia(p);
   document.querySelectorAll("[data-k]").forEach(el=>{
     const v=store.get(el.dataset.k);
     if(el.type==="checkbox"){el.checked=v==="1";el.onchange=()=>store.set(el.dataset.k,el.checked?"1":"0")}
