@@ -1,4 +1,4 @@
-const V="wl-lp-v6";
+const V="wl-lp-v7";
 const CORE=["./","index.html","app.js","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/apple-touch-icon.png","data/u5.js","data/u6.js","data/u7.js","data/u8.js","data/m3-u4.js","data/m3-u5.js","data/m3-u6.js","data/m3-u7.js","data/m3-u8.js"];
 const FONT_HOSTS=["fonts.googleapis.com","fonts.gstatic.com"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});

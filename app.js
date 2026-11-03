@@ -66,6 +66,10 @@ function render(i){
 function go(i){i=Math.max(0,Math.min(PLANS.length-1,i));
   try{history.replaceState(null,"","#p"+hashId(PLANS[i].id))}catch(e){}
   render(i);window.scrollTo(0,0)}
+const part=()=>[document.querySelector(".ubar"),document.querySelector(".bar"),$("app"),$("foot")];
+function view(home){$("home").hidden=!home;part().forEach(e=>e.hidden=home)}
+function showHome(){view(true);document.title="แผนการสอน passion (Warakon)";
+  try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}window.scrollTo(0,0)}
 function loadUnit(n){return new Promise((ok,no)=>{
   if(window.WLU&&WLU[n])return ok(WLU[n]);
   const s=document.createElement("script");s.src=typeof n==="number"?"data/u"+n+".js":"data/"+n.replace(/^m3u/,"m3-u")+".js";
@@ -77,6 +81,7 @@ function fillPick(){
     h+=`<option value="${i}">${esc(p.id)} ${esc(p.title)}</option>`});
   $("pick").innerHTML=h+"</optgroup>"}
 async function openUnit(n,planId){
+  view(false);
   try{const d=await loadUnit(n);UNIT=d.UNIT;PLANS=d.PLANS;IND=d.IND}
   catch(e){$("app").innerHTML='<div class="card">โหลดข้อมูลยูนิตนี้ไม่สำเร็จ กรุณาเชื่อมต่ออินเทอร์เน็ตแล้วลองใหม่</div>';return}
   $("unit").value=n;fillPick();
@@ -93,7 +98,9 @@ function parseHash(){const m=(location.hash||"").match(/^#p(m3-)?(\d+)-(\d+)$/);
   $("pick").onchange=e=>go(+e.target.value);
   $("prev").onclick=()=>go(+$("pick").value-1);$("next").onclick=()=>go(+$("pick").value+1);
   $("foot").textContent="อ21101 ภาษาอังกฤษ ม.1 · PASSION 1 · โรงเรียนบ้านวังลึก(ยุวนาฏชนูทิศ)";
-  const h=parseHash();openUnit(h?h.n:5,h?h.id:null);
+  $("homeBtn").onclick=showHome;
+  document.querySelectorAll(".lv[data-lv]").forEach(b=>b.onclick=()=>openUnit(b.dataset.lv==="3"?"m3u4":5,null).then(()=>window.scrollTo(0,0)));
+  const h=parseHash();if(h)openUnit(h.n,h.id);else showHome();
   window.addEventListener("hashchange",()=>{const h=parseHash();if(!h)return;
     if(UNIT&&h.n!==uKey())openUnit(h.n,h.id);
     else{const f=PLANS.findIndex(p=>p.id===h.id);if(f>=0&&f!==+$("pick").value)render(f)}});

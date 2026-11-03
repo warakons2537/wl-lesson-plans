@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>แผนสอน อ21101 ม.1</title>
+<title>แผนการสอน passion (Warakon)</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0E6B5A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="แผนสอน ม.1">
+<meta name="apple-mobile-web-app-title" content="แผนการสอน passion (Warakon)">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
@@ -123,12 +123,25 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-vis
   .notes textarea{border:0;border-bottom:1px dotted #000;border-radius:0;background:none}
 }
 .ubar select{width:100%;min-width:0;height:44px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:600 15px var(--f-body);padding:0 10px}
-@media print{.ubar{display:none}}
+.ubar{display:grid;grid-template-columns:auto 1fr;gap:8px}
+.hb{height:44px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:600 15px var(--f-body);padding:0 12px;cursor:pointer;white-space:nowrap}
+.home{display:flex;flex-direction:column;gap:12px}
+.lv{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);font-family:var(--f-body);text-align:left;cursor:pointer}
+.lv b{font:700 28px/1.2 var(--f-head)}
+.lv span{font-size:15px;color:var(--muted)}
+.lv:disabled{opacity:.5;cursor:default}
+@media print{.ubar,.home{display:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="ubar"><select id="unit" aria-label="เลือกยูนิต"></select></div>
+  <section id="home" class="home" hidden>
+    <header class="hero"><div class="eyebrow">โรงเรียนบ้านวังลึก(ยุวนาฏชนูทิศ)</div><h1>แผนการสอน passion (Warakon)</h1><div class="src">เลือกระดับชั้น</div></header>
+    <button class="lv" data-lv="1"><b>ม.1</b><span>อ21101 ภาษาอังกฤษ</span></button>
+    <button class="lv" disabled><b>ม.2</b><span>เร็วๆ นี้</span></button>
+    <button class="lv" data-lv="3"><b>ม.3</b><span>อ23101–อ23102 ภาษาอังกฤษ</span></button>
+  </section>
+  <div class="ubar"><button class="hb" id="homeBtn">‹ หน้าแรก</button><select id="unit" aria-label="เลือกยูนิต"></select></div>
   <nav class="bar" aria-label="เลือกแผน">
     <button class="nb" id="prev" aria-label="แผนก่อนหน้า">‹</button>
     <select id="pick" aria-label="เลือกแผนการสอน"></select>
