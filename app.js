@@ -10,13 +10,13 @@ const TEACHER="นายวรากร ตรงต่อกิจ";
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const $=id=>document.getElementById(id);
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
-const MEDIA=["m2u8:8.1","m2u8:8.2","m2u8:8.3","m2u8:8.4","m2u8:8.5","m2u8:8.6","m2u8:8.7","m2u8:8.8","m2u8:8.9","m2u8:8.10","m2u8:8.11","m2u8:8.12","m2u8:8.13","m2u8:8.14","m2u8:8.15"];
+const MEDIA=[["m2u8",8,15],[5,5,5]].flatMap(([k,n,c])=>Array.from({length:c},(_,i)=>k+":"+n+"."+(i+1))); // [ยูนิต, เลขบท, จำนวนแผน]
 const loadJs=src=>new Promise((ok,no)=>{if(document.querySelector(`script[data-s="${src}"]`))return ok();
   const s=document.createElement("script");s.src=src;s.dataset.s=src;s.onload=ok;s.onerror=()=>no(new Error(src));document.head.appendChild(s)});
 async function openMedia(p){
   const b=$("mbtn");if(b)b.disabled=true;
-  try{await loadJs("media.js");await loadJs("data/"+UNIT.k.replace(/^(m\d)u/,"$1-u")+"-media.js");
-    WLMedia.open(UNIT.k,p.id,p.id+" "+p.title)}
+  try{await loadJs("media.js");await loadJs("data/"+(UNIT.k?UNIT.k.replace(/^(m\d)u/,"$1-u"):"u"+UNIT.no)+"-media.js");
+    WLMedia.open(uKey(),p.id,p.id+" "+p.title)}
   catch(e){alert("โหลดสื่อการสอนไม่สำเร็จ กรุณาเชื่อมต่ออินเทอร์เน็ตแล้วลองใหม่")}
   if(b)b.disabled=false}
 

@@ -114,7 +114,7 @@ function sheet(){
   const W=M.ws,L="ABCDEFGHIJKLMNOP",ord=W.order,letter=v=>L[ord.indexOf(v)];
   $b().innerHTML=`<div class="row mvnp"><button class="bt" id="wsa">👁️ ${st.ans?"ซ่อน":"แสดง"}เฉลย</button><button class="bt pri" id="wsp">🖨️ พิมพ์ใบงาน</button></div>
   <div class="ws${st.ans?" show":""}">
-   <div class="wsh"><b>ใบงาน ${esc(W.title)} · อ22102 ภาษาอังกฤษ ม.2</b><span>ชื่อ-สกุล ................................................ ชั้น ม.2 เลขที่ ........ คะแนน ......</span></div>
+   <div class="wsh"><b>ใบงาน ${esc(W.title)} · ${esc(M.course||"อ22102 ภาษาอังกฤษ ม.2")}</b><span>ชื่อ-สกุล ................................................ ชั้น ${esc(M.lv||"ม.2")} เลขที่ ........ คะแนน ......</span></div>
    <div><h3>Part A <small>จับคู่คำศัพท์กับภาพ เขียนตัวอักษรลงในช่องว่าง</small></h3>
     <div class="pics">${ord.map((v,k)=>`<div class="pic"><b>${L[k]}</b><span>${V[v][2]}</span></div>`).join("")}</div></div>
    <ol class="mt">${V.map((w,v)=>`<li><span lang="en">${esc(w[0])}</span><i class="blank"><u class="ak">${letter(v)}</u></i></li>`).join("")}</ol>
@@ -146,7 +146,7 @@ function partsSheet(){
     else b=`<ul class="wl" lang="en">${p.items.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
     return `<div><h3>Part ${L[i]} <small>${esc(p.n||"")}</small></h3>${tx}${b}</div>`};
   $b().innerHTML=`<div class="row mvnp"><button class="bt" id="wsa">👁️ ${st.ans?"ซ่อน":"แสดง"}เฉลย</button><button class="bt pri" id="wsp">🖨️ พิมพ์ใบงาน</button></div>
-  <div class="ws${st.ans?" show":""}"><div class="wsh"><b>ใบงาน ${esc(W.title)} · อ22102 ภาษาอังกฤษ ม.2</b><span>ชื่อ-สกุล ................................................ ชั้น ม.2 เลขที่ ........ คะแนน ......</span></div>${W.parts.map(part).join("")}</div>`;
+  <div class="ws${st.ans?" show":""}"><div class="wsh"><b>ใบงาน ${esc(W.title)} · ${esc(M.course||"อ22102 ภาษาอังกฤษ ม.2")}</b><span>ชื่อ-สกุล ................................................ ชั้น ${esc(M.lv||"ม.2")} เลขที่ ........ คะแนน ......</span></div>${W.parts.map(part).join("")}</div>`;
   $("wsa").onclick=()=>{st.ans=!st.ans;sheet()};$("wsp").onclick=()=>window.print();
 }
 
