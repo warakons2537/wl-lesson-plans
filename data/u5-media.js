@@ -114,6 +114,202 @@ R["5.5"]={
   {q:"“greedy” means …",o:["ตะกละ","ใจดี","หิว"],a:0},{q:"Pim says: “Let me taste.” She wants to …",o:["try the food","cook the food","buy the food"],a:0},{q:"Have you got any sandwiches? — Yes, ___.",o:["I have","I do","I am"],a:0},{q:"A small meal between lunch and dinner is …",o:["a snack","a party","a break"],a:0}],
  order:[{w:["What do you","have for","breakfast?"],a:"What do you have for breakfast?"},{w:["I usually","have","toast and eggs."],a:"I usually have toast and eggs."},{w:["Have you got","any sandwiches","today?"],a:"Have you got any sandwiches today?"},{w:["Don't","be","greedy!"],a:"Don't be greedy!"}]
 };
+R["5.6"]={
+ vocab:[["menu","รายการอาหาร","📋"],["order","สั่ง (อาหาร)","📝"],["portion","ปริมาณอาหารต่อหนึ่งที่","🍽️"],["dessert","ของหวาน","🍰"],["instead","แทน / แทนที่","🔄"],["greedy","ตะกละ","🤤"],["waiter","พนักงานเสิร์ฟ","🧑‍🍳"],["salad","สลัด","🥗"],["soup","ซุป","🍲"],["lemonade","น้ำมะนาว","🍋"]],
+ slides:[
+  T("🍽️","Ordering Food: Order Up!","PASSION 1 Unit 5 · แผน 5.6",["ใช้สำนวนสั่งอาหารได้ถูกต้อง","ถาม–ตอบเพื่อสั่งอาหารและเครื่องดื่ม","ตอบรับหรือปฏิเสธอย่างสุภาพ"]),
+  B("🧑‍🍳","Are you ready to order?","Warm up · ถ้าเป็นลูกค้า อยากสั่งอะไร"),
+  ...vsl(10),
+  L("Waiter says …","พนักงานพูดว่า",[["Next, please!","ลูกค้าคนต่อไป"],["What would you like to order today?","วันนี้รับอะไรดี"],["Anything to drink?","รับเครื่องดื่มไหม"]]),
+  L("Customer says …","ลูกค้าพูดว่า",[["Have you got any soup?","มีซุปไหม"],["I would like some salad, please.","ขอสลัดหน่อย"],["A big portion, please!","ขอจานใหญ่"]]),
+  L("Say yes or no politely","ตอบรับ / ปฏิเสธอย่างสุภาพ",[["Yes, please. / That sounds good!","รับ"],["No, thanks. I'll have lemonade instead.","ไม่ล่ะ ขอน้ำมะนาวแทน"],["I love them both!","ชอบทั้งสองอย่าง"]]),
+  L("Model dialogue","บทสนทนาตัวอย่าง",[["Waiter: What would you like to order today?",""],["Customer: Have you got any soup? — Waiter: Yes, we have.",""],["Customer: I would like some soup, please. — Waiter: Anything to drink?",""],["Customer: No, thanks. — Waiter: Enjoy your meal!",""]]),
+  L("Role play","แสดงบทบาทสมมติ คู่ละ 2 คน",[["Student A = waiter · Student B = customer",""],["Order 1 main dish, 1 dessert and 1 drink.","สั่งอาหารจานหลัก ของหวาน เครื่องดื่มอย่างละ 1"],["Swap roles.","สลับบทบาท"]]),
+  L("Wrap up","สรุป",[["How do you order politely?","สั่งอาหารอย่างสุภาพว่าอย่างไร"],["Make one sentence with instead.","พูดประโยคที่ใช้ instead 1 ประโยค"]])],
+ ws:{title:"Ordering Food: Order Up!",parts:[
+  {k:"match",n:"จับคู่คำศัพท์กับความหมาย",ord:[2,4,0,5,1,3],items:[["menu","รายการอาหาร"],["order","สั่ง (อาหาร)"],["portion","ปริมาณอาหารต่อหนึ่งที่"],["dessert","ของหวาน"],["instead","แทน / แทนที่"],["greedy","ตะกละ"]]},
+  {k:"fill",n:"เลือกคำจากกรอบเติมให้ถูกต้อง",bank:["menu","order","portion","dessert","instead","greedy"],items:[{q:"Here is the ___. What would you like?",a:"menu"},{q:"I would like to ___ a bowl of soup.",a:"order"},{q:"A big ___, please!",a:"portion"},{q:"No cake, thanks. I'll have fruit ___.",a:"instead"},{q:"For ___, I would like ice cream.",a:"dessert"},{q:"Don't be ___! Please share the food.",a:"greedy"}]},
+  {k:"order",n:"เรียงคำให้เป็นประโยค",items:[{w:["What would you like","to order","today?"],a:"What would you like to order today?"},{w:["I would like","some salad,","please."],a:"I would like some salad, please."},{w:["Have you got","any soup?"],a:"Have you got any soup?"}]},
+  {k:"write",n:"เขียนบทสนทนาสั้น ๆ (ตอบอิสระ)",items:["Waiter: What would you like to order today?","Customer: ____________________________________","Waiter: Anything to drink?","Customer: ____________________________________"]}]},
+ games:["match","quiz","mcq","order"],
+ mcq:[{q:"What ___ you like to order today?",o:["do","would","are"],a:1},{q:"“menu” means …",o:["ใบเสร็จ","รายการอาหาร","จานอาหาร"],a:1},{q:"Which sentence is polite?",o:["Give me soup!","I want soup now.","I would like some soup, please."],a:2},{q:"No, thanks. I'll have tea ___.",o:["instead","too","also"],a:0},
+  {q:"“greedy” means …",o:["ตะกละ","ใจดี","ขี้อาย"],a:0},{q:"A big ___, please!",o:["menu","portion","waiter"],a:1},{q:"Anything to drink?",o:["Next, please!","It's a menu.","Yes, please. Lemonade."],a:2},{q:"Which one is a dessert?",o:["soup","cake","salad"],a:1}],
+ order:[{w:["What would you like","to order","today?"],a:"What would you like to order today?"},{w:["I would like","some soup,","please."],a:"I would like some soup, please."},{w:["No, thanks.","I'll have tea","instead."],a:"No, thanks. I'll have tea instead."},{w:["Have you got","any salad?"],a:"Have you got any salad?"}]
+};
+R["5.7"]={
+ vocab:[["always","เสมอ","100%"],["usually","โดยปกติ","90%"],["normally / generally","โดยทั่วไป","80%"],["often / frequently","บ่อย ๆ","70%"],["sometimes","บางครั้ง","50%"],["occasionally","นาน ๆ ครั้ง","30%"],["seldom","ไม่ค่อย","20%"],["hardly ever / rarely","แทบไม่เคย","10%"],["never","ไม่เคยเลย","0%"]],
+ slides:[
+  T("📊","Adverbs of Frequency","PASSION 1 Unit 5 · แผน 5.7",["บอกความหมายคำบอกความถี่","วางตำแหน่ง adverbs ในประโยคได้ถูกต้อง","ถาม–ตอบด้วย How often …?"]),
+  B("🍳","How often do you eat breakfast?","Warm up · ทุกวัน บางวัน หรือไม่เคยเลย"),
+  ...vsl(9),
+  L("Frequency scale","ไล่ลำดับความถี่จากมากไปน้อย",[["always → usually → often","100% → 90% → 70%"],["sometimes → occasionally","50% → 30%"],["seldom → hardly ever → never","20% → 10% → 0%"]]),
+  L("Position (1)","อยู่หน้ากริยาทั่วไป",[["I always get up early.",""],["We usually have rice for lunch.",""],["She seldom eats fast food.",""]]),
+  L("Position (2)","อยู่หลัง am / is / are",[["I am never late for school.",""],["He is often hungry at 10 o'clock.",""],["They are usually at home on Sunday.",""]]),
+  L("How often …?","ถามความถี่",[["How often do you eat fruit?",""],["I eat fruit every day. = I always eat fruit.",""],["How often does she drink milk? — She seldom drinks milk.",""]]),
+  L("Healthy rules","กฎสุขภาพ (must always / must never)",[["You must always wash your hands before lunch.",""],["You must never skip breakfast.",""],["You should sometimes eat fish.",""]]),
+  L("Wrap up","สรุป",[["Say 3 true sentences about you.","พูดประโยคจริงเกี่ยวกับตัวเอง 3 ประโยค"],["Where does the adverb go?","adverb วางตรงไหนในประโยค"]])],
+ ws:{title:"Adverbs of Frequency",parts:[
+  {k:"match",n:"จับคู่คำบอกความถี่กับเปอร์เซ็นต์",ord:[3,0,5,2,4,1],items:[["always","100%"],["usually","90%"],["often","70%"],["sometimes","50%"],["seldom","20%"],["never","0%"]]},
+  {k:"fill",n:"เติมคำบอกความถี่ให้ตรงกับเปอร์เซ็นต์ในวงเล็บ",bank:["always","usually","often","sometimes","seldom","never"],items:[{q:"I ___ brush my teeth every morning. (100%)",a:"always"},{q:"She ___ eats breakfast at home. (90%)",a:"usually"},{q:"We ___ play football after school. (50%)",a:"sometimes"},{q:"He is ___ late for school. (0%)",a:"never"},{q:"They ___ eat fish. (20%)",a:"seldom"},{q:"My brother ___ drinks milk. (70%)",a:"often"}]},
+  {k:"order",n:"เรียงคำให้เป็นประโยค",items:[{w:["I","always","get up","early."],a:"I always get up early."},{w:["She","is","never","late."],a:"She is never late."},{w:["How often","do you","eat fruit?"],a:"How often do you eat fruit?"}]},
+  {k:"write",n:"เขียนประโยคจริงเกี่ยวกับตัวเอง (ตอบอิสระ)",items:["I always ____________________.","I sometimes ____________________.","I never ____________________.","How often do you ____________________? — I ____________________."]}]},
+ games:["match","quiz","mcq","order"],
+ mcq:[{q:"Which word means 100%?",o:["never","always","seldom"],a:1},{q:"Which word means 0%?",o:["never","often","usually"],a:0},{q:"I ___ get up early. (always)",o:["get always","always","am always"],a:1},{q:"She ___ late. (never)",o:["never is","is never","never be"],a:1},
+  {q:"“seldom” means …",o:["บ่อย ๆ","ไม่ค่อย","ทุกวัน"],a:1},{q:"How often do you eat fruit? — I eat fruit ___.",o:["every day","yesterday","tomorrow"],a:0},{q:"Which is more often?",o:["sometimes","usually","seldom"],a:1},{q:"Which sentence is correct?",o:["We eat usually rice.","Usually we are rice.","We usually eat rice."],a:2}],
+ order:[{w:["I","always","get up","early."],a:"I always get up early."},{w:["She","is","never","late."],a:"She is never late."},{w:["We","usually","have rice","for lunch."],a:"We usually have rice for lunch."},{w:["How often","do you","eat fruit?"],a:"How often do you eat fruit?"}]
+};
+R["5.8"]={
+ vocab:[["eggs","ไข่","🥚"],["bananas","กล้วย","🍌"],["apples","แอปเปิล","🍎"],["carrots","แครอต","🥕"],["tomatoes","มะเขือเทศ","🍅"],["rice","ข้าว","🍚"],["milk","นม","🥛"],["sugar","น้ำตาล","🍬"],["water","น้ำ","💧"],["cheese","ชีส","🧀"],["bread","ขนมปัง","🍞"],["juice","น้ำผลไม้","🧃"]],
+ slides:[
+  T("🛒","Countable / Uncountable & some / any","PASSION 1 Unit 5 · แผน 5.8",["แยกคำนามนับได้และนับไม่ได้","ใช้ some / any ถาม–ตอบเกี่ยวกับอาหาร","ถามปริมาณด้วย How many / How much"]),
+  B("🧊","What's in your fridge?","Warm up · ในตู้เย็นที่บ้านมีอะไรบ้าง"),
+  ...vsl(12),
+  L("Countable nouns","นับได้ มีรูปเอกพจน์/พหูพจน์",[["a banana → two bananas","กล้วย 1 ลูก → 2 ลูก"],["an egg → six eggs","ไข่ 1 ฟอง → 6 ฟอง"],["How many eggs?","ไข่กี่ฟอง"]]),
+  L("Uncountable nouns","นับไม่ได้ ไม่เติม s",[["milk · rice · sugar · water","ใช้ a cup of / a bag of บอกปริมาณ"],["a cup of milk · a bag of rice","นมหนึ่งถ้วย · ข้าวหนึ่งถุง"],["How much sugar?","น้ำตาลเท่าไร"]]),
+  L("some / any","ใช้ตามชนิดของประโยค",[["We have some bananas.","บอกเล่า → some"],["Do you have any rice?","คำถาม → any"],["We don't have any milk.","ปฏิเสธ → any"]]),
+  L("Fridge check","ถาม–ตอบกับเพื่อน",[["Do you have any cheese? — Yes, we have some cheese.",""],["Do you have any apples? — No, we don't have any apples.",""],["How many tomatoes are there? — There are four.",""]]),
+  L("Wrap up","สรุป",[["Say 2 countable and 2 uncountable foods.","บอกอาหารนับได้ 2 นับไม่ได้ 2"],["Make 1 sentence with some and 1 with any.","แต่งประโยค some 1 any 1"]])],
+ ws:{title:"Countable / Uncountable & some / any",parts:[
+  {k:"sort",n:"เขียนคำลงในช่องให้ถูกกลุ่ม",boxes:[{h:"Countable",items:["eggs","bananas","apples","carrots","tomatoes"]},{h:"Uncountable",items:["rice","milk","sugar","water","cheese"]}]},
+  {k:"fill",n:"เลือก some หรือ any",bank:["some","any"],items:[{q:"We have ___ eggs.",a:"some"},{q:"Do you have ___ milk?",a:"any"},{q:"I don't have ___ sugar.",a:"any"},{q:"There are ___ apples in the bag.",a:"some"},{q:"Is there ___ rice?",a:"any"},{q:"He has ___ cheese.",a:"some"}]},
+  {k:"mcq",n:"เลือกคำตอบที่ถูกต้อง",items:[{q:"___ eggs do you need?",o:["How much","How many","Some"],a:1},{q:"___ sugar do you add?",o:["How much","How many","Any"],a:0},{q:"a cup of ___",o:["tomatoes","milk","carrots"],a:1}]},
+  {k:"write",n:"แต่งประโยคจากของในตู้เย็นของตนเอง (ตอบอิสระ)",items:["We have some ____________________.","We don't have any ____________________.","Do you have any ____________________? — ____________________."]}]},
+ games:["match","quiz","mcq","order"],
+ mcq:[{q:"Which word is uncountable?",o:["egg","milk","banana"],a:1},{q:"Which word is countable?",o:["rice","sugar","apple"],a:2},{q:"We have ___ bananas.",o:["any","a","some"],a:2},{q:"Do you have ___ cheese?",o:["any","some","an"],a:0},
+  {q:"We don't have ___ sugar.",o:["some","any","many"],a:1},{q:"How ___ eggs are there?",o:["much","many","some"],a:1},{q:"How ___ water do you drink?",o:["many","much","a"],a:1},{q:"“a bag of rice” means …",o:["ข้าวหนึ่งถุง","ข้าวหนึ่งถ้วย","ข้าวหนึ่งจาน"],a:0}],
+ order:[{w:["How many","eggs","are there?"],a:"How many eggs are there?"},{w:["Do you have","any rice?"],a:"Do you have any rice?"},{w:["We have","some bananas."],a:"We have some bananas."},{w:["We don't have","any sugar."],a:"We don't have any sugar."}]
+};
+R["5.9"]={
+ vocab:[["How many","กี่ (นับได้)","🔢"],["How much","เท่าไร (นับไม่ได้)","⚖️"],["eggs","ไข่","🥚"],["sugar","น้ำตาล","🍬"],["coffee","กาแฟ","☕"],["biscuits","บิสกิต","🍪"],["juice","น้ำผลไม้","🧃"],["stressed syllable","พยางค์ที่เน้นเสียง","🔊"],["a week","หนึ่งสัปดาห์","📅"],["tomatoes","มะเขือเทศ","🍅"]],
+ slides:[
+  T("🔢","How much / How many & Stress","PASSION 1 Unit 5 · แผน 5.9",["ใช้ How much / How many ถามปริมาณ","ตอบโดยใช้ adverbs of frequency","ออกเสียงพยางค์ที่เน้นเสียงในคำศัพท์"]),
+  B("🥚","How many eggs do you eat a week?","Warm up · กินไข่สัปดาห์ละกี่ฟอง"),
+  ...vsl(10),
+  L("How many + countable","ถามจำนวน (นับได้ พหูพจน์)",[["How many eggs do you eat?",""],["I usually eat six a week.",""],["How many biscuits do you eat?",""]]),
+  L("How much + uncountable","ถามปริมาณ (นับไม่ได้)",[["How much sugar do you add to your coffee?",""],["I never add much.",""],["How much juice do you drink?",""]]),
+  L("Answer with frequency","ตอบด้วยคำบอกความถี่",[["I always eat two eggs for breakfast.",""],["I sometimes drink a lot of juice.",""],["I seldom eat many biscuits.",""]]),
+  L("Word stress","ตัวพิมพ์ใหญ่ = พยางค์เน้นเสียง",[["SU-gar · COF-fee · BIS-cuit","เน้นพยางค์แรก"],["ba-NA-na · to-MA-to · po-TA-to","เน้นพยางค์กลาง"],["Clap on the stressed syllable.","ตบมือตรงพยางค์ที่เน้น"]]),
+  L("Wrap up","สรุป",[["When do we use How many? How much?","ใช้ How many / How much เมื่อไร"],["Say 2 words and show the stress.","พูดคำศัพท์ 2 คำและบอกพยางค์ที่เน้น"]])],
+ ws:{title:"How much / How many & Stress",parts:[
+  {k:"fill",n:"เลือก How much หรือ How many",bank:["How much","How many"],items:[{q:"___ eggs do you eat a week?",a:"How many"},{q:"___ sugar do you add to your tea?",a:"How much"},{q:"___ biscuits are in the box?",a:"How many"},{q:"___ juice do you drink?",a:"How much"},{q:"___ tomatoes do you need?",a:"How many"}]},
+  {k:"tf",n:"ถูก (T) หรือผิด (F) เกี่ยวกับพยางค์ที่เน้นเสียง",items:[{q:"sugar → SU-gar (เน้นพยางค์แรก)",a:true},{q:"coffee → cof-FEE (เน้นพยางค์หลัง)",a:false},{q:"banana → ba-NA-na (เน้นพยางค์กลาง)",a:true},{q:"tomato → TO-ma-to (เน้นพยางค์แรก)",a:false}]},
+  {k:"order",n:"เรียงคำให้เป็นประโยค",items:[{w:["How many","eggs","do you eat?"],a:"How many eggs do you eat?"},{w:["How much","sugar","do you add?"],a:"How much sugar do you add?"},{w:["I never","add much."],a:"I never add much."}]},
+  {k:"write",n:"ถาม–ตอบเกี่ยวกับตัวเอง (ตอบอิสระ)",items:["How many eggs do you eat a week? — I ____________________.","How much sugar do you add to your drink? — I ____________________."]}]},
+ games:["match","quiz","mcq","order"],
+ mcq:[{q:"___ eggs do you eat?",o:["How much","How many","How"],a:1},{q:"___ sugar do you add?",o:["How many","How much","How old"],a:1},{q:"Which word is countable?",o:["biscuits","sugar","juice"],a:0},{q:"“stressed syllable” means …",o:["พยางค์ที่เน้นเสียง","พยางค์ที่ไม่ออกเสียง","คำที่ยาวที่สุด"],a:0},
+  {q:"Which is correct?",o:["How many juice?","How much juice?","How much eggs?"],a:1},{q:"banana → the stress is on the ___ syllable.",o:["first","second (middle)","last"],a:1},{q:"How many eggs do you eat? — I ___ eat ten a week.",o:["always","never","hardly"],a:0},{q:"sugar → the stress is on the ___ syllable.",o:["second","first","last"],a:1}],
+ order:[{w:["How many","eggs","do you eat?"],a:"How many eggs do you eat?"},{w:["How much","sugar","do you add?"],a:"How much sugar do you add?"},{w:["I always","eat","ten a week."],a:"I always eat ten a week."},{w:["I never","add much."],a:"I never add much."}]
+};
+R["5.10"]={
+ vocab:[["pizza","พิซซ่า","🍕"],["burger","เบอร์เกอร์","🍔"],["french fries","มันฝรั่งทอด","🍟"],["chocolate","ช็อกโกแลต","🍫"],["pancake","แพนเค้ก","🥞"],["salad","สลัด","🥗"],["wrap","แรป (แป้งห่อไส้)","🌯"],["delicious","อร่อยมาก","😋"],["sweet","หวาน","🍭"],["healthy","ดีต่อสุขภาพ","💪"],["fast food","อาหารจานด่วน","⏱️"]],
+ slides:[
+  T("🎬","Video Workshop: I Love Pizza!","PASSION 1 Unit 5 · แผน 5.10",["ดูวิดีโอเรื่องอาหารที่ชื่นชอบและจับใจความสำคัญ","ระบุอาหารโปรด อาหารที่ไม่ชอบ และเหตุผล"]),
+  B("🍕","What is your favourite food?","Warm up · อาหารโปรดของเธอคืออะไร"),
+  ...vsl(11),
+  L("Before watching","เตรียมก่อนดูวิดีโอ",[["What is your favourite food?",""],["What food do you NOT like?",""],["What reason do you give?","เขาให้เหตุผลว่าอะไร"]]),
+  L("While watching","ระหว่างดู · จดข้อมูลของแต่ละคน",[["Jake · Molly · Leila · Zac","ดูวิดีโอแล้วจดลงใบงาน"],["Favourite food: ___","อาหารโปรด"],["Reason: because it is ___","เหตุผล"]]),
+  L("Sentence frames","โครงสร้างประโยคสำหรับตอบ",[["Meet Jake! He loves ___ because it is ___.",""],["She doesn't like ___ because it is ___.",""],["My favourite food is ___ because it is ___.",""]]),
+  L("Reasons","เหตุผลที่ใช้บอกได้",[["delicious · sweet · healthy","อร่อย · หวาน · ดีต่อสุขภาพ"],["I love chocolate because it is sweet.",""],["I like salad because it is healthy.",""]]),
+  L("Pair work","ถาม–ตอบกับเพื่อน",[["What is your favourite food? — My favourite food is ___.",""],["Why? — Because it is ___.",""]]),
+  L("Wrap up","สรุป",[["Say one food you love and why.","บอกอาหารที่รักและเหตุผล"],["Say one food you don't like and why.","บอกอาหารที่ไม่ชอบและเหตุผล"]])],
+ ws:{title:"Video Workshop: I Love Pizza!",parts:[
+  {k:"pics",n:"จับคู่คำศัพท์กับภาพ เขียนตัวอักษรลงในช่องว่าง",ord:[7,2,9,0,5,10,3,8,1,6,4]},
+  {k:"fill",n:"เติมเหตุผลให้ประโยคสมบูรณ์",bank:["delicious","sweet","healthy","fast"],items:[{q:"I love chocolate because it is ___.",a:"sweet"},{q:"I like salad because it is ___.",a:"healthy"},{q:"Pizza is ___. I eat it every week!",a:"delicious"},{q:"Burgers are ___ food. You can get one quickly.",a:"fast"}]},
+  {k:"write",n:"ดูวิดีโอแล้วเขียนข้อมูล (ตอบจากวิดีโอ)",items:["Jake loves ____________________ because it is ____________________.","Molly loves ____________________ because it is ____________________.","Leila likes ____________________ because it is ____________________.","Zac doesn't like ____________________ because ____________________."]},
+  {k:"write",n:"เขียนเกี่ยวกับตัวเอง (ตอบอิสระ)",items:["My favourite food is ____________________ because it is ____________________.","I don't like ____________________ because ____________________."]}]},
+ games:["match","quiz","mcq","order"],
+ mcq:[{q:"Which food is sweet?",o:["salad","chocolate","fish"],a:1},{q:"“healthy” means …",o:["ดีต่อสุขภาพ","อร่อยมาก","หิวมาก"],a:0},{q:"I love pizza ___ it is delicious.",o:["but","because","or"],a:1},{q:"Which is fast food?",o:["burger and french fries","rice and fish","soup and salad"],a:0},
+  {q:"What is your favourite food? — ___",o:["I am fine.","My favourite food is pizza.","It is five o'clock."],a:1},{q:"“delicious” means …",o:["เค็ม","เปรี้ยว","อร่อยมาก"],a:2},{q:"Meet Jake! He ___ pizza.",o:["loves","love","loving"],a:0},{q:"I like salad because it is ___.",o:["healthy","fast food","sleepy"],a:0}],
+ order:[{w:["My favourite food","is pizza."],a:"My favourite food is pizza."},{w:["I love chocolate","because","it is sweet."],a:"I love chocolate because it is sweet."},{w:["She","doesn't like","burgers."],a:"She doesn't like burgers."},{w:["What","is your","favourite food?"],a:"What is your favourite food?"}]
+};
+R["5.11"]={
+ vocab:[["love","ชอบมาก","😍"],["like","ชอบ","🙂"],["don't like","ไม่ชอบ","🙁"],["survey","การสำรวจ","📋"],["interview","สัมภาษณ์","🎤"],["chart","แผนภูมิ","📊"],["Top 3","3 อันดับแรก","🏆"],["Best Loved Dish","จานที่รักมากที่สุด","🥇"],["Most Liked Choice","ตัวเลือกที่ชอบมากที่สุด","🥈"],["Most Disliked Dish","จานที่ไม่ชอบมากที่สุด","👎"]],
+ slides:[
+  T("📊","Interview & Class Top 3 Food Charts","PASSION 1 Unit 5 · แผน 5.11",["ใช้ love / like / don't like บอกความชอบ","สัมภาษณ์เพื่อนและสรุปผลเป็นอันดับ","นำเสนอผลสำรวจอย่างมั่นใจ"]),
+  B("🎤","Interview time!","Warm up · วันนี้เราจะสำรวจอาหารของทั้งห้อง"),
+  ...vsl(10),
+  L("Interview questions","คำถามสัมภาษณ์",[["What food do you love most?",""],["What food do you like most?",""],["What food don't you like most?",""]]),
+  L("Answer","ตอบคำถาม",[["I love pizza most.",""],["I like fried rice most.",""],["I don't like bitter melon.","ฉันไม่ชอบมะระ"]]),
+  L("Tally chart (example)","ตัวอย่างตารางนับคะแนน",[["Pizza ▮▮▮▮▮▮▮▮ = 8",""],["Fried rice ▮▮▮▮▮▮ = 6",""],["Salad ▮▮▮ = 3",""]]),
+  L("Report the results","สรุปผลสำรวจ",[["Our survey shows that the Best Loved Dish is pizza.",""],["The Most Liked Choice is fried rice.",""],["The Most Disliked Dish is bitter melon.",""]]),
+  L("Make the chart","ทำแผนภูมิ Top 3 ของห้อง",[["Group of 4: interview 8 classmates.","กลุ่มละ 4 คน สัมภาษณ์เพื่อน 8 คน"],["Count votes and draw the Top 3 chart.","นับคะแนนและวาดแผนภูมิ"],["Present to the class.","นำเสนอหน้าห้อง"]]),
+  L("Wrap up","สรุป",[["What is the Top 1 food in our class?","อาหารอันดับ 1 ของห้องคืออะไร"],["Say one sentence about your survey.","พูดสรุปผลสำรวจ 1 ประโยค"]])],
+ ws:{title:"Interview & Class Top 3 Food Charts",parts:[
+  {k:"match",n:"จับคู่คำศัพท์กับความหมาย",ord:[3,0,5,2,4,1],items:[["survey","การสำรวจ"],["interview","สัมภาษณ์"],["chart","แผนภูมิ"],["love","ชอบมาก"],["don't like","ไม่ชอบ"],["Top 3","3 อันดับแรก"]]},
+  {k:"tf",n:"อ่านผลสำรวจแล้วเลือก ถูก (T) หรือผิด (F)",text:["Class survey: pizza 8 votes · fried rice 6 votes · salad 3 votes · fish 2 votes"],items:[{q:"The Best Loved Dish is pizza.",a:true},{q:"Salad has the most votes.",a:false},{q:"Fried rice has six votes.",a:true},{q:"Fish is in the Top 3.",a:false}]},
+  {k:"fill",n:"เติมคำให้สมบูรณ์",bank:["love","like","don't like","survey","chart"],items:[{q:"We asked 20 classmates. Our ___ shows pizza is Top 1.",a:"survey"},{q:"I ___ ice cream. It is my favourite!",a:"love"},{q:"I ___ fish. It smells bad.",a:"don't like"},{q:"We draw a ___ with the Top 3 foods.",a:"chart"}]},
+  {k:"write",n:"สัมภาษณ์เพื่อน 3 คน แล้วเขียนผล (ตอบอิสระ)",items:["Friend 1: Love ____________ · Like ____________ · Don't like ____________","Friend 2: Love ____________ · Like ____________ · Don't like ____________","Friend 3: Love ____________ · Like ____________ · Don't like ____________","Our survey shows that the Best Loved Dish is ____________________."]}]},
+ games:["match","quiz","mcq","order"],
+ mcq:[{q:"What food do you love most? — I love ___ most.",o:["pizza","at school","yesterday"],a:0},{q:"“survey” means …",o:["แผนภูมิ","การสำรวจ","ของหวาน"],a:1},{q:"The ___ shows the Top 3 foods.",o:["menu","chart","portion"],a:1},{q:"Which means “ไม่ชอบ”?",o:["love","like","don't like"],a:2},
+  {q:"The Best Loved Dish means the dish with ___ votes.",o:["the most","the fewest","no"],a:0},{q:"Our survey shows that the Most Liked Choice ___ fried rice.",o:["is","are","am"],a:0},{q:"“Top 3” means …",o:["3 อันดับสุดท้าย","3 อันดับแรก","3 ครั้ง"],a:1},{q:"What food don't you like most? — I don't like ___.",o:["bitter melon","very much","at home"],a:0}],
+ order:[{w:["What food","do you","love most?"],a:"What food do you love most?"},{w:["I love","pizza most."],a:"I love pizza most."},{w:["Our survey shows","that the Best Loved Dish","is pizza."],a:"Our survey shows that the Best Loved Dish is pizza."},{w:["The Most Disliked Dish","is bitter melon."],a:"The Most Disliked Dish is bitter melon."}]
+};
+R["5.12"]={
+ vocab:[["throw away","ทิ้ง","🗑️"],["slices","แผ่น / ชิ้นบาง ๆ","🍞"],["still","ยังคง","⏳"],["bin","ถังขยะ","🚮"],["happen","เกิดขึ้น","❓"],["packet","ซอง / ห่อ","📦"],["food waste","ขยะอาหาร","🍛"],["leftovers","อาหารที่เหลือ","🍱"],["fridge","ตู้เย็น","🧊"],["date on the packet","วันที่บนห่อ","📅"]],
+ slides:[
+  T("♻️","Reading: Food Waste & Zero Waste","PASSION 1 Unit 5 · แผน 5.12",["บอกความหมายคำศัพท์จากบทอ่าน","อ่านและตอบคำถามเกี่ยวกับขยะอาหาร","ให้คำแนะนำด้วย Don't / You should / Try to"]),
+  B("🗑️","Do you throw away food?","Warm up · เคยทิ้งอาหารไหม เพราะอะไร"),
+  ...vsl(10),
+  L("Reading (1)","Mali's family",[["Mali's family often throws away food.",""],["They throw away slices of bread and old rice.",""],["Food waste is a big problem.","ขยะอาหารเป็นปัญหาใหญ่"]]),
+  L("Reading (2)","Mali's family (ต่อ)",[["Now they put leftovers in the fridge.",""],["They eat leftovers the next day.",""],["They only buy what they need.",""]]),
+  L("Questions","ตอบคำถามจากบทอ่าน",[["What do they throw away?","slices of bread and old rice"],["Where do they put leftovers now?","in the fridge"],["What do they buy now?","only what they need"]]),
+  L("Giving advice","ให้คำแนะนำลดขยะอาหาร",[["Don't + verb … : Don't throw away food!",""],["You should + verb … : You should eat leftovers.",""],["Try to + verb … : Try to buy only what you need.",""]]),
+  L("Zero waste tips","ไอเดียลดขยะ",[["Check the date on the packet.",""],["Put old food in the fridge, not in the bin.",""],["Share extra food with friends.",""]]),
+  L("Wrap up","สรุป",[["Give 2 pieces of advice with Don't / Try to.","ให้คำแนะนำ 2 ข้อ"],["Which tip can you do at home?","ข้อไหนทำได้ที่บ้าน"]])],
+ ws:{title:"Reading: Food Waste & Zero Waste",parts:[
+  {k:"match",n:"จับคู่คำศัพท์กับความหมาย",ord:[4,2,0,5,1,3],items:[["throw away","ทิ้ง"],["still","ยังคง"],["bin","ถังขยะ"],["happen","เกิดขึ้น"],["packet","ซอง / ห่อ"],["leftovers","อาหารที่เหลือ"]]},
+  {k:"tf",n:"อ่านแล้วเลือก ถูก (T) หรือผิด (F)",text:["Mali's family often throws away food. They throw away slices of bread and old rice. Now they put leftovers in the fridge and eat them the next day. They only buy what they need."],items:[{q:"Mali's family never throws away food.",a:false},{q:"They put leftovers in the fridge.",a:true},{q:"They eat leftovers the next day.",a:true},{q:"They buy a lot of extra food now.",a:false}]},
+  {k:"fill",n:"เติม Don't / You should / Try to",bank:["Don't","You should","Try to"],items:[{q:"___ throw away food!",a:"Don't"},{q:"___ eat leftovers the next day.",a:"You should"},{q:"___ buy only what you need.",a:"Try to"},{q:"___ put food in the bin.",a:"Don't"}]},
+  {k:"write",n:"เขียนคำแนะนำลดขยะอาหาร 3 ข้อ (ตอบอิสระ)",items:["Don't ____________________.","You should ____________________.","Try to ____________________."]}]},
+ games:["match","quiz","mcq","order"],
+ mcq:[{q:"“throw away” means …",o:["เก็บไว้","ทิ้ง","ซื้อ"],a:1},{q:"Where do we put food waste?",o:["in the bin","in the fridge","in the school bag"],a:0},{q:"___ throw away food!",o:["Try to","Don't","You should"],a:1},{q:"___ buy only what you need.",o:["Don't","Try to","Throw"],a:1},
+  {q:"“leftovers” means …",o:["อาหารที่ยังไม่ได้ทำ","อาหารที่เหลือ","อาหารเด็ก"],a:1},{q:"Check the ___ on the packet.",o:["date","bin","fridge"],a:0},{q:"You should eat leftovers ___.",o:["the next day","never","last year"],a:0},{q:"Is the bread ___ good? — Yes, it is.",o:["still","happen","slices"],a:0}],
+ order:[{w:["Don't","throw away","food!"],a:"Don't throw away food!"},{w:["You should","eat leftovers."],a:"You should eat leftovers."},{w:["Try to","buy only","what you need."],a:"Try to buy only what you need."},{w:["Put leftovers","in the fridge."],a:"Put leftovers in the fridge."}]
+};
+R["5.13"]={
+ vocab:[["omelette","ไข่เจียว / ออมเล็ต","🍳"],["ingredients","ส่วนผสม","📝"],["eggs","ไข่","🥚"],["milk","นม","🥛"],["cheese","ชีส","🧀"],["ham","แฮม","🥓"],["tomatoes","มะเขือเทศ","🍅"],["grammes","กรัม","⚖️"],["teaspoons","ช้อนชา","🥄"],["slices","แผ่น","🍞"],["recipe","สูตรอาหาร","📖"],["fridge","ตู้เย็น","🧊"]],
+ slides:[
+  T("🍳","Listening & My Favourite Recipe","PASSION 1 Unit 5 · แผน 5.13",["ฟังบทสนทนาและจับใจความสำคัญ","เขียนส่วนผสมพร้อมปริมาณและหน่วย","นำเสนอเมนูโปรดของตนเอง"]),
+  B("😋","I'm hungry! What have we got?","Warm up · หิวแล้ว ในตู้เย็นมีอะไรบ้าง"),
+  ...vsl(12),
+  L("Listening script","ครูอ่านให้ฟัง 2 รอบ",[["A: I'm hungry! B: What have you got in the fridge?",""],["A: I've got eggs and cheese. B: How many eggs are there?",""],["A: There are six. B: Is the cheese still good to eat?",""],["A: Yes, it is. Let's make an omelette!",""]]),
+  L("Listening questions","ตอบคำถามจากที่ฟัง",[["What do they have in the fridge?","eggs and cheese"],["How many eggs are there?","six"],["What do they make?","an omelette"]]),
+  L("Quantities","ปริมาณและหน่วย",[["two eggs · three slices of ham",""],["100 grammes of cheese",""],["one teaspoon of salt · a cup of milk",""]]),
+  L("Recipe model","Cheese omelette",[["Ingredients: 2 eggs · 50 grammes of cheese",""],["2 slices of ham · 1 tomato",""],["1 teaspoon of salt",""]]),
+  L("My favourite recipe","เขียนและนำเสนอเมนูโปรด",[["My favourite recipe is ___.",""],["I need … eggs / … grammes of … / … slices of …",""],["I like it because it is ___.",""]]),
+  L("Wrap up","สรุป",[["Say 3 ingredients with amounts.","บอกส่วนผสม 3 อย่างพร้อมปริมาณ"],["Present your recipe to a friend.","นำเสนอสูตรให้เพื่อน"]])],
+ ws:{title:"Listening & My Favourite Recipe",parts:[
+  {k:"pics",n:"จับคู่คำศัพท์กับภาพ เขียนตัวอักษรลงในช่องว่าง",ord:[5,9,0,11,3,7,1,10,4,8,2,6]},
+  {k:"fill",n:"เติมหน่วยวัดและปริมาณ",bank:["grammes","teaspoon","slices","eggs"],items:[{q:"Two ___ of ham.",a:"slices"},{q:"100 ___ of cheese.",a:"grammes"},{q:"One ___ of salt.",a:"teaspoon"},{q:"Three ___ for the omelette.",a:"eggs"}]},
+  {k:"tf",n:"ฟังบทสนทนาแล้วเลือก ถูก (T) หรือผิด (F)",items:[{q:"There are six eggs in the fridge.",a:true},{q:"They have ham in the fridge.",a:false},{q:"They make an omelette.",a:true},{q:"The cheese is bad.",a:false}]},
+  {k:"write",n:"เขียนสูตรอาหารโปรดของตนเอง (ตอบอิสระ)",items:["My favourite recipe: ____________________","Ingredients: 1) ____________ 2) ____________ 3) ____________ 4) ____________","I like it because it is ____________________."]}]},
+ games:["match","quiz","mcq","order"],
+ mcq:[{q:"“ingredients” means …",o:["ส่วนผสม","ตู้เย็น","ของหวาน"],a:0},{q:"How ___ eggs are there?",o:["much","many","some"],a:1},{q:"100 ___ of cheese",o:["slices","grammes","teaspoons"],a:1},{q:"1 ___ of salt",o:["teaspoon","bowl of","egg"],a:0},
+  {q:"“I'm hungry!” means …",o:["ฉันหิว","ฉันเหนื่อย","ฉันง่วง"],a:0},{q:"Three ___ of ham",o:["grammes","slices","eggs"],a:1},{q:"What do you need for an omelette?",o:["eggs","a bed","a book"],a:0},{q:"A recipe tells us …",o:["how to cook food","how to sleep","how to swim"],a:0}],
+ order:[{w:["I'm hungry!","What have you got","in the fridge?"],a:"I'm hungry! What have you got in the fridge?"},{w:["How many","eggs","are there?"],a:"How many eggs are there?"},{w:["I need","two eggs","and 50 grammes of cheese."],a:"I need two eggs and 50 grammes of cheese."},{w:["My favourite recipe","is an omelette."],a:"My favourite recipe is an omelette."}]
+};
+R["5.14"]={
+ vocab:[["carton","กล่อง (นม/น้ำผลไม้)","🥛"],["bottle","ขวด","🍾"],["bag","ถุง","🛍️"],["spoon","ช้อน","🥄"],["cup","ถ้วย","☕"],["dozen","โหล (12)","12"],["a pinch of","หยิบมือ","🤏"],["tablespoon","ช้อนโต๊ะ","Tbsp"],["teaspoon","ช้อนชา","tsp"],["clove","กลีบ (กระเทียม)","🧄"],["bundle","กำ / มัด","🌿"],["packet","ซอง / ห่อ","📦"],["grams","กรัม","g"],["ml","มิลลิลิตร","ml"]],
+ slides:[
+  T("🌍","My Favourite Recipe Around the World","PASSION 1 Unit 5 · แผน 5.14",["ใช้ตัวเลข หน่วยวัด และภาชนะในรายการส่วนผสม","สืบค้นส่วนผสมของเมนูทั่วโลก","นำเสนอเมนูและอ่านส่วนผสมให้ถูกต้อง"]),
+  B("🌍","What do people eat around the world?","Warm up · เมนูโปรดของประเทศอื่น ๆ"),
+  ...vsl(14),
+  L("Numbers + countable nouns","จำนวน + นามนับได้",[["Four eggs",""],["A dozen eggs","ไข่ 12 ฟอง"],["Two cloves of garlic",""]]),
+  L("Uncountable + measure","นามนับไม่ได้ + หน่วยวัด",[["A pinch of salt",""],["One tablespoon of olive oil",""],["Two tablespoons of soy sauce",""],["One teaspoon of salt",""]]),
+  L("Containers","ภาชนะ",[["a carton of milk · a bottle of water","กล่องนม · ขวดน้ำ"],["a bag of rice · a packet of noodles","ถุงข้าว · ห่อเส้น"],["a cup of sugar · 200 ml of coconut milk",""]]),
+  L("Recipe research","ค้นหาเมนูทั่วโลก",[["Choose 1 dish from any country.","เลือก 1 เมนูจากประเทศใดก็ได้"],["Find 5–7 ingredients in English.","หาส่วนผสม 5–7 อย่างเป็นภาษาอังกฤษ"],["Write the amount and the unit.","เขียนปริมาณและหน่วย"]]),
+  L("Present your dish","นำเสนอเมนู",[["My dish is ___ from ___.",""],["We need … eggs, … grams of …, a pinch of …",""]]),
+  L("Wrap up","สรุป · เตรียมทบทวน Unit 5",[["Say 3 ingredients with units.","บอกส่วนผสม 3 อย่างพร้อมหน่วย"],["Review Progress Check pages 94–95.","ทบทวนก่อนทำแบบทดสอบ"]])],
+ ws:{title:"My Favourite Recipe Around the World",parts:[
+  {k:"pics",n:"จับคู่คำศัพท์กับภาพหรือสัญลักษณ์ เขียนตัวอักษรลงในช่องว่าง",ord:[4,10,1,7,12,0,9,3,13,6,2,8,5,11]},
+  {k:"fill",n:"เติมหน่วยวัดหรือภาชนะให้ถูกต้อง",bank:["carton","bottle","bag","pinch","tablespoon","cloves","dozen"],items:[{q:"A ___ of milk.",a:"carton"},{q:"A ___ of water.",a:"bottle"},{q:"A ___ of rice.",a:"bag"},{q:"A ___ of salt.",a:"pinch"},{q:"One ___ of olive oil.",a:"tablespoon"},{q:"Two ___ of garlic.",a:"cloves"},{q:"A ___ eggs = 12 eggs.",a:"dozen"}]},
+  {k:"mcq",n:"เลือกคำตอบที่ถูกต้อง",items:[{q:"Which is uncountable?",o:["egg","clove","salt"],a:2},{q:"“a pinch of salt” means …",o:["เกลือหยิบมือ","เกลือหนึ่งถุง","เกลือหนึ่งขวด"],a:0},{q:"200 ___ of coconut milk",o:["ml","dozen","eggs"],a:0}]},
+  {k:"write",n:"บันทึกเมนูทั่วโลกที่ค้นพบ (ตอบอิสระ)",items:["Dish: ____________________  Country: ____________________","1) ____________________  2) ____________________","3) ____________________  4) ____________________","5) ____________________  6) ____________________"]}]},
+ games:["match","quiz","mcq","order"],
+ mcq:[{q:"A dozen eggs = ___ eggs.",o:["10","12","20"],a:1},{q:"Which is a container?",o:["bottle","pinch","clove"],a:0},{q:"“teaspoon” means …",o:["ช้อนชา","ช้อนโต๊ะ","ถ้วย"],a:0},{q:"“tablespoon” means …",o:["ช้อนชา","ถ้วย","ช้อนโต๊ะ"],a:2},
+  {q:"A ___ of garlic",o:["clove","carton","bottle"],a:0},{q:"Two ___ of soy sauce",o:["tablespoons","eggs","dozen"],a:0},{q:"“grams” and “ml” are …",o:["units of measurement","containers","drinks"],a:0},{q:"A ___ of milk",o:["carton","clove","pinch"],a:0}],
+ order:[{w:["Four","eggs"],a:"Four eggs"},{w:["A pinch","of salt"],a:"A pinch of salt"},{w:["One tablespoon","of olive oil"],a:"One tablespoon of olive oil"},{w:["Two tablespoons","of soy sauce"],a:"Two tablespoons of soy sauce"}]
+};
 /*__NEXT__*/
 for(const k in R){R[k].course="อ21101 ภาษาอังกฤษ ม.1";R[k].lv="ม.1"}
 return R;
