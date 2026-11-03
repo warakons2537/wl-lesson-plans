@@ -1,5 +1,7 @@
 let UNIT,PLANS,IND;
-const UNIT_LIST=[[5,"Food & Drink"],[6,"My Town"],[7,"Hobbies & Talents"],[8,"Sports Champions"]];
+const UNIT_LIST=[[5,"Food & Drink","ม.1 · อ21101"],[6,"My Town","ม.1 · อ21101"],[7,"Hobbies & Talents","ม.1 · อ21101"],[8,"Sports Champions","ม.1 · อ21101"],["m3u4","The Arts","ม.3 · อ23101–อ23102"]];
+const uKey=()=>UNIT.k||UNIT.no;
+const hashId=id=>(UNIT.k?"m3-":"")+id.replace(".","-");
 const STAGES=[
  {n:"Warm up",th:"นำเข้าสู่บทเรียน"},{n:"Presentation",th:"นำเสนอความรู้"},
  {n:"Practice",th:"ฝึกใช้"},{n:"Production",th:"ใช้ภาษาสร้างงาน"},{n:"Wrap up",th:"สรุป"}];
@@ -21,19 +23,19 @@ function render(i){
      <div class="rng">นาทีที่<br>${rng[k][0]}–${rng[k][1]}</div></header>
     <div class="sb">
      <div><div class="sub">ขั้นตอน</div><ol class="do">${s.do.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>
-     <div class="say"><div class="lab">ครูพูด (TEACHER SAYS)</div>${s.say.map(x=>`<p lang="en">${esc(x)}</p>`).join("")}</div>
+     ${s.say.length?`<div class="say"><div class="lab">ครูพูด (TEACHER SAYS)</div>${s.say.map(x=>`<p lang="en">${esc(x)}</p>`).join("")}</div>`:""}
     </div></article>`).join("");
-  const key="wl-u"+T+"-"+p.id;
+  const key=(UNIT.k?"wl-"+UNIT.k:"wl-u"+T)+"-"+p.id;
   const chk=p.prep.map((x,j)=>`<label><input type="checkbox" data-k="${key}-c${j}"><span>${esc(x)}</span></label>`).join("");
   const as=p.as.map(a=>`<li><span class="kpa ${a[0]}">${a[0]}</span><div><div class="t">${esc(a[1])}</div>
     <div class="m">${esc(KPA[a[0]])} · เครื่องมือ: ${esc(a[2])} · เกณฑ์: ${esc(a[3])}${a[4]?" · "+esc(a[4]):""}</div></div></li>`).join("");
   $("app").innerHTML=`
   <header class="hero">
-   <div class="eyebrow">อ21101 ภาษาอังกฤษ ม.1 · Unit ${T} ${esc(UNIT.name)}</div>
+   <div class="eyebrow">${esc(UNIT.course||"อ21101 ภาษาอังกฤษ ม.1")} · Unit ${T} ${esc(UNIT.name)}</div>
    <div class="id">${esc(p.id)}</div>
    <h1>${esc(p.title)}</h1>
    <div class="src">ต้นฉบับ: แผนที่ ${p.src} ${esc(p.srcName)} · ชั่วโมงที่ ${p.h}/${p.hs}</div>
-   <div class="meta"><span>60 นาที</span><span>นักเรียน 14 คน</span><span>${esc(p.book)}</span></div>
+   <div class="meta"><span>${UNIT.mins||60} นาที</span><span>นักเรียน ${esc(UNIT.students||14)} คน</span><span>${esc(p.book)}</span></div>
   </header>
   <section class="sec"><h2>ตัวชี้วัด</h2><div class="card"><ul class="ind" style="padding:0">${ind}</ul></div></section>
   <section class="sec"><h2>สาระสำคัญ</h2><div class="card">${esc(p.core)}</div></section>
@@ -41,7 +43,7 @@ function render(i){
   <section class="sec"><h2>ศัพท์และโครงสร้าง</h2><div class="card two">
    <div><div class="sub">ศัพท์</div><div class="chips" lang="en">${p.words.map(w=>`<span>${esc(w)}</span>`).join("")}</div></div>
    <div><div class="sub">โครงสร้าง / สำนวน</div><div class="chips" lang="en">${p.sent.map(w=>`<span>${esc(w)}</span>`).join("")}</div></div></div></section>
-  <section class="sec"><h2>แถบเวลา 60 นาที</h2><div class="card">
+  <section class="sec"><h2>แถบเวลา ${UNIT.mins||60} นาที</h2><div class="card">
    <div class="tbar">${p.t.map((m,k)=>`<div style="flex:${m};background:var(--s${k+1})">${m}</div>`).join("")}</div>
    <div class="leg">${p.t.map((m,k)=>`<div><i style="background:var(--s${k+1})"></i><span>${STAGES[k].n}</span><b>${rng[k][0]}–${rng[k][1]} น.</b></div>`).join("")}</div></div></section>
   <section class="sec"><h2>เตรียม / ตรวจก่อนสอน</h2><div class="card chk" id="chk">${chk}</div></section>
@@ -59,14 +61,14 @@ function render(i){
     if(el.type==="checkbox"){el.checked=v==="1";el.onchange=()=>store.set(el.dataset.k,el.checked?"1":"0")}
     else{if(v)el.value=v;el.oninput=()=>store.set(el.dataset.k,el.value)}});
   $("pick").value=i; $("prev").disabled=i===0; $("next").disabled=i===PLANS.length-1;
-  document.title="แผนสอน Unit "+T+" "+UNIT.name;
+  document.title="แผนสอน "+(UNIT.label?UNIT.label+" ":"")+"Unit "+T+" "+UNIT.name;
 }
 function go(i){i=Math.max(0,Math.min(PLANS.length-1,i));
-  try{history.replaceState(null,"","#p"+PLANS[i].id.replace(".","-"))}catch(e){}
+  try{history.replaceState(null,"","#p"+hashId(PLANS[i].id))}catch(e){}
   render(i);window.scrollTo(0,0)}
 function loadUnit(n){return new Promise((ok,no)=>{
   if(window.WLU&&WLU[n])return ok(WLU[n]);
-  const s=document.createElement("script");s.src="data/u"+n+".js";
+  const s=document.createElement("script");s.src=typeof n==="number"?"data/u"+n+".js":"data/"+n.replace(/^m3u/,"m3-u")+".js";
   s.onload=()=>WLU[n]?ok(WLU[n]):no(new Error("empty"));s.onerror=()=>no(new Error("load"));
   document.head.appendChild(s)})}
 function fillPick(){
@@ -78,20 +80,22 @@ async function openUnit(n,planId){
   try{const d=await loadUnit(n);UNIT=d.UNIT;PLANS=d.PLANS;IND=d.IND}
   catch(e){$("app").innerHTML='<div class="card">โหลดข้อมูลยูนิตนี้ไม่สำเร็จ กรุณาเชื่อมต่ออินเทอร์เน็ตแล้วลองใหม่</div>';return}
   $("unit").value=n;fillPick();
+  $("foot").textContent=(UNIT.course||"อ21101 ภาษาอังกฤษ ม.1")+" · "+(UNIT.book||"PASSION 1")+" · โรงเรียนบ้านวังลึก(ยุวนาฏชนูทิศ)";
   let i=PLANS.findIndex(p=>p.id===planId);if(i<0)i=0;
-  try{history.replaceState(null,"","#p"+PLANS[i].id.replace(".","-"))}catch(e){}
+  try{history.replaceState(null,"","#p"+hashId(PLANS[i].id))}catch(e){}
   render(i)}
-function parseHash(){const m=(location.hash||"").match(/^#p(\d+)-(\d+)$/);
-  return m&&UNIT_LIST.some(u=>u[0]===+m[1])?{n:+m[1],id:m[1]+"."+m[2]}:null}
+function parseHash(){const m=(location.hash||"").match(/^#p(m3-)?(\d+)-(\d+)$/);
+  if(!m)return null;const n=m[1]?"m3u"+m[2]:+m[2];
+  return UNIT_LIST.some(u=>u[0]===n)?{n,id:m[2]+"."+m[3]}:null}
 (function init(){
-  $("unit").innerHTML=UNIT_LIST.map(u=>`<option value="${u[0]}">Unit ${u[0]} ${esc(u[1])}</option>`).join("");
-  $("unit").onchange=e=>{openUnit(+e.target.value,null).then(()=>window.scrollTo(0,0))};
+  $("unit").innerHTML=UNIT_LIST.map((u,i)=>(i===0||UNIT_LIST[i-1][2]!==u[2]?(i?"</optgroup>":"")+`<optgroup label="${esc(u[2])}">`:"")+`<option value="${u[0]}">Unit ${String(u[0]).replace(/^m3u/,"")} ${esc(u[1])}</option>`).join("")+"</optgroup>";
+  $("unit").onchange=e=>{const v=e.target.value;openUnit(/^\d+$/.test(v)?+v:v,null).then(()=>window.scrollTo(0,0))};
   $("pick").onchange=e=>go(+e.target.value);
   $("prev").onclick=()=>go(+$("pick").value-1);$("next").onclick=()=>go(+$("pick").value+1);
   $("foot").textContent="อ21101 ภาษาอังกฤษ ม.1 · PASSION 1 · โรงเรียนบ้านวังลึก(ยุวนาฏชนูทิศ)";
   const h=parseHash();openUnit(h?h.n:5,h?h.id:null);
   window.addEventListener("hashchange",()=>{const h=parseHash();if(!h)return;
-    if(UNIT&&h.n!==UNIT.no)openUnit(h.n,h.id);
+    if(UNIT&&h.n!==uKey())openUnit(h.n,h.id);
     else{const f=PLANS.findIndex(p=>p.id===h.id);if(f>=0&&f!==+$("pick").value)render(f)}});
   if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 })();
