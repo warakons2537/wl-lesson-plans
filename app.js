@@ -1,7 +1,7 @@
 let UNIT,PLANS,IND;
-const UNIT_LIST=[[5,"Food & Drink","ม.1 · อ21101"],[6,"My Town","ม.1 · อ21101"],[7,"Hobbies & Talents","ม.1 · อ21101"],[8,"Sports Champions","ม.1 · อ21101"],["m3u4","The Arts","ม.3 · อ23101–อ23102"],["m3u5","Wild World","ม.3 · อ23101–อ23102"],["m3u6","Festivals","ม.3 · อ23101–อ23102"],["m3u7","Country and City Life","ม.3 · อ23101–อ23102"],["m3u8","Health and Fitness","ม.3 · อ23101–อ23102"]];
+const UNIT_LIST=[[5,"Food & Drink","ม.1 · อ21101"],[6,"My Town","ม.1 · อ21101"],[7,"Hobbies & Talents","ม.1 · อ21101"],[8,"Sports Champions","ม.1 · อ21101"],["m2u5","Animal World","ม.2 · อ22102"],["m3u4","The Arts","ม.3 · อ23101–อ23102"],["m3u5","Wild World","ม.3 · อ23101–อ23102"],["m3u6","Festivals","ม.3 · อ23101–อ23102"],["m3u7","Country and City Life","ม.3 · อ23101–อ23102"],["m3u8","Health and Fitness","ม.3 · อ23101–อ23102"]];
 const uKey=()=>UNIT.k||UNIT.no;
-const hashId=id=>(UNIT.k?"m3-":"")+id.replace(".","-");
+const hashId=id=>(UNIT.k?UNIT.k.slice(0,2)+"-":"")+id.replace(".","-");
 const STAGES=[
  {n:"Warm up",th:"นำเข้าสู่บทเรียน"},{n:"Presentation",th:"นำเสนอความรู้"},
  {n:"Practice",th:"ฝึกใช้"},{n:"Production",th:"ใช้ภาษาสร้างงาน"},{n:"Wrap up",th:"สรุป"}];
@@ -72,7 +72,7 @@ function showHome(){view(true);document.title="แผนการสอน passi
   try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}window.scrollTo(0,0)}
 function loadUnit(n){return new Promise((ok,no)=>{
   if(window.WLU&&WLU[n])return ok(WLU[n]);
-  const s=document.createElement("script");s.src=typeof n==="number"?"data/u"+n+".js":"data/"+n.replace(/^m3u/,"m3-u")+".js";
+  const s=document.createElement("script");s.src=typeof n==="number"?"data/u"+n+".js":"data/"+n.replace(/^(m\d)u/,"$1-u")+".js";
   s.onload=()=>WLU[n]?ok(WLU[n]):no(new Error("empty"));s.onerror=()=>no(new Error("load"));
   document.head.appendChild(s)})}
 function fillPick(){
@@ -89,17 +89,17 @@ async function openUnit(n,planId){
   let i=PLANS.findIndex(p=>p.id===planId);if(i<0)i=0;
   try{history.replaceState(null,"","#p"+hashId(PLANS[i].id))}catch(e){}
   render(i)}
-function parseHash(){const m=(location.hash||"").match(/^#p(m3-)?(\d+)-(\d+)$/);
-  if(!m)return null;const n=m[1]?"m3u"+m[2]:+m[2];
+function parseHash(){const m=(location.hash||"").match(/^#p(m[23]-)?(\d+)-(\d+)$/);
+  if(!m)return null;const n=m[1]?m[1].slice(0,2)+"u"+m[2]:+m[2];
   return UNIT_LIST.some(u=>u[0]===n)?{n,id:m[2]+"."+m[3]}:null}
 (function init(){
-  $("unit").innerHTML=UNIT_LIST.map((u,i)=>(i===0||UNIT_LIST[i-1][2]!==u[2]?(i?"</optgroup>":"")+`<optgroup label="${esc(u[2])}">`:"")+`<option value="${u[0]}">Unit ${String(u[0]).replace(/^m3u/,"")} ${esc(u[1])}</option>`).join("")+"</optgroup>";
+  $("unit").innerHTML=UNIT_LIST.map((u,i)=>(i===0||UNIT_LIST[i-1][2]!==u[2]?(i?"</optgroup>":"")+`<optgroup label="${esc(u[2])}">`:"")+`<option value="${u[0]}">Unit ${String(u[0]).replace(/^m\du/,"")} ${esc(u[1])}</option>`).join("")+"</optgroup>";
   $("unit").onchange=e=>{const v=e.target.value;openUnit(/^\d+$/.test(v)?+v:v,null).then(()=>window.scrollTo(0,0))};
   $("pick").onchange=e=>go(+e.target.value);
   $("prev").onclick=()=>go(+$("pick").value-1);$("next").onclick=()=>go(+$("pick").value+1);
   $("foot").textContent="อ21101 ภาษาอังกฤษ ม.1 · PASSION 1 · โรงเรียนบ้านวังลึก(ยุวนาฏชนูทิศ)";
   $("homeBtn").onclick=showHome;
-  document.querySelectorAll(".lv[data-lv]").forEach(b=>b.onclick=()=>openUnit(b.dataset.lv==="3"?"m3u4":5,null).then(()=>window.scrollTo(0,0)));
+  document.querySelectorAll(".lv[data-lv]").forEach(b=>b.onclick=()=>openUnit({"2":"m2u5","3":"m3u4"}[b.dataset.lv]||5,null).then(()=>window.scrollTo(0,0)));
   const h=parseHash();if(h)openUnit(h.n,h.id);else showHome();
   window.addEventListener("hashchange",()=>{const h=parseHash();if(!h)return;
     if(UNIT&&h.n!==uKey())openUnit(h.n,h.id);
