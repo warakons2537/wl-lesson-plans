@@ -10,7 +10,7 @@ const TEACHER="นายวรากร ตรงต่อกิจ";
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const $=id=>document.getElementById(id);
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
-const MEDIA=[["m2u8",8,15],["m2u5",5,14],[5,5,14]].flatMap(([k,n,c])=>Array.from({length:c},(_,i)=>k+":"+n+"."+(i+1))); // [ยูนิต, เลขบท, จำนวนแผน]
+const MEDIA=[["m2u8",8,15],["m2u5",5,14],["m3u4",4,14],[5,5,14]].flatMap(([k,n,c])=>Array.from({length:c},(_,i)=>k+":"+n+"."+(i+1))); // [ยูนิต, เลขบท, จำนวนแผน]
 const loadJs=src=>new Promise((ok,no)=>{if(document.querySelector(`script[data-s="${src}"]`))return ok();
   const s=document.createElement("script");s.src=src;s.dataset.s=src;s.onload=ok;s.onerror=()=>no(new Error(src));document.head.appendChild(s)});
 async function openMedia(p){
