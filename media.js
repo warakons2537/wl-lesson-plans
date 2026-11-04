@@ -2,7 +2,12 @@
 if(window.WLMedia)return;
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const can="speechSynthesis" in window&&"SpeechSynthesisUtterance" in window;
-const say=t=>{if(!can)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.85;speechSynthesis.speak(u)}catch(e){}};
+const BAD=/fred|ralph|kathy|junior|albert|bad news|good news|bahh|bells|boing|bubbles|cellos|jester|organ|superstar|trinoids|whisper|wobble|zarvox/i;
+const GOOD=[/premium|enhanced|natural/i,/siri/i,/samantha|ava|allison|nicky|zoe|evan|nathan|google us english/i];
+let VO=null;
+const pick=()=>{try{const vs=speechSynthesis.getVoices().filter(v=>/^en[-_]US/i.test(v.lang)&&!BAD.test(v.name));if(!vs.length)return null;for(const re of GOOD){const v=vs.find(v=>re.test(v.name));if(v)return v}return vs.find(v=>v.default)||vs[0]}catch(e){return null}};
+if(can){try{speechSynthesis.onvoiceschanged=()=>{VO=pick()}}catch(e){}VO=pick()}
+const say=t=>{if(!can)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";const v=VO||pick();if(v)u.voice=v;u.rate=.92;u.pitch=1;u.volume=1;speechSynthesis.speak(u)}catch(e){}};
 const sp=t=>can?`<button class="mv-sp" data-say="${esc(t)}" aria-label="อ่านออกเสียง">🔊</button>`:"";
 const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
 const range=n=>Array.from({length:n},(_,i)=>i);
