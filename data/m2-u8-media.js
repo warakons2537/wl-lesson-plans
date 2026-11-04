@@ -150,10 +150,10 @@ R["8.5"]={
    {q:"You must ___ the rubbish every evening.",a:"take out"},{q:"Please ___ your phone charger here.",a:"plug in"},{q:"Guests must ___ the cooker after cooking.",a:"switch off"}]},
   {k:"write",n:"เขียนกฎของโฮสเทล (ตอบอิสระ)",items:["A: Are we allowed to ____________________?  B: Yes, you are. / No, you aren't.","Guests must ____________________.","Guests mustn't ____________________."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"Are we allowed to cook in the kitchen? — Yes, ___.",o:["you are","you do","you must"],a:0},{q:"Guests ___ switch off the cooker after cooking.",o:["must","mustn't","don't have to"],a:0},
-  {q:"Which phrasal verb means เสียบปลั๊ก?",o:["plug in","pick up","take out"],a:0},{q:"“Pick up your socks” means …",o:["หยิบ/เก็บถุงเท้าขึ้นมา","ซักถุงเท้า","ทิ้งถุงเท้า"],a:0},
-  {q:"You ___ make noise at night.",o:["mustn't","must","have to"],a:0},{q:"What time must the guests be back?",o:["By ten o'clock","By nine o'clock","By eight o'clock"],a:0},
-  {q:"Do we have to put away our plates? — ___",o:["Yes, you do.","Yes, you are.","No, you mustn't."],a:0},{q:"A phrasal verb is a verb + …",o:["a preposition or an adverb","a noun","an adjective"],a:0}],
+ mcq:[{q:"Are we allowed to cook in the kitchen? — Yes, ___.",o:["you are","you do","you must"],a:0},{q:"Guests ___ switch off the cooker after cooking.",o:["mustn't","don't have to","must"],a:2},
+  {q:"Which phrasal verb means เสียบปลั๊ก?",o:["take out","plug in","pick up"],a:1},{q:"“Pick up your socks” means …",o:["หยิบ/เก็บถุงเท้าขึ้นมา","ซักถุงเท้า","ทิ้งถุงเท้า"],a:0},
+  {q:"You ___ make noise at night.",o:["must","have to","mustn't"],a:2},{q:"What time must the guests be back?",o:["By eight o'clock","By ten o'clock","By nine o'clock"],a:1},
+  {q:"Do we have to put away our plates? — ___",o:["Yes, you do.","Yes, you are.","No, you mustn't."],a:0},{q:"A phrasal verb is a verb + …",o:["a noun","an adjective","a preposition or an adverb"],a:2}],
  order:[{w:["Guests must","switch off","the cooker","after cooking."],a:"Guests must switch off the cooker after cooking."},{w:["Are we allowed","to cook","in the kitchen?"],a:"Are we allowed to cook in the kitchen?"},
   {w:["You mustn't","make noise","at night."],a:"You mustn't make noise at night."},{w:["Do we have to","put away","our plates?"],a:"Do we have to put away our plates?"},{w:["You must","be back","by ten o'clock."],a:"You must be back by ten o'clock."}]
 };
@@ -178,10 +178,10 @@ R["8.6"]={
   {k:"order",n:"เรียงคำให้เป็นประโยคที่ถูกต้อง",items:[{w:["Guests mustn't","eat food","in their rooms."],a:"Guests mustn't eat food in their rooms."},{w:["We mustn't","use mobile phones","in class."],a:"We mustn't use mobile phones in class."},{w:["We must","wear","school uniforms."],a:"We must wear school uniforms."}]},
   {k:"write",n:"เขียนกฎของโรงเรียน (ตอบอิสระ)",items:["We must ____________________.","We mustn't ____________________.","In the canteen, we must ____________________.","In the corridor, we mustn't ____________________."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"You ___ touch the paintings in the museum.",o:["mustn't","must","don't have to"],a:0},{q:"Students ___ wear school uniforms. It's a rule.",o:["must","mustn't","has to"],a:0},
-  {q:"“mustn't” means …",o:["ห้ามทำ","ไม่จำเป็นต้องทำ","อาจจะทำ"],a:0},{q:"Which sentence is correct?",o:["She must wear a uniform.","She musts wear a uniform.","She must wears a uniform."],a:0},
-  {q:"Where can you see this rule: “You must be quiet.”?",o:["In a hospital","On a football field","In a canteen"],a:0},{q:"You ___ run. You can walk.",o:["don't have to","mustn't","must"],a:0,ex:"เดินก็ได้ จึงไม่จำเป็นต้องวิ่ง"},
-  {q:"Which word means สุภาพ?",o:["polite","corridor","prescription"],a:0},{q:"Guests ___ eat food in their rooms.",o:["mustn't","must","has to"],a:0}],
+ mcq:[{q:"You ___ touch the paintings in the museum.",o:["mustn't","must","don't have to"],a:0},{q:"Students ___ wear school uniforms. It's a rule.",o:["mustn't","has to","must"],a:2},
+  {q:"“mustn't” means …",o:["อาจจะทำ","ห้ามทำ","ไม่จำเป็นต้องทำ"],a:1},{q:"Which sentence is correct?",o:["She must wear a uniform.","She musts wear a uniform.","She must wears a uniform."],a:0},
+  {q:"Where can you see this rule: “You must be quiet.”?",o:["On a football field","In a canteen","In a hospital"],a:2},{q:"You ___ run. You can walk.",o:["must","don't have to","mustn't"],a:1,ex:"เดินก็ได้ จึงไม่จำเป็นต้องวิ่ง"},
+  {q:"Which word means สุภาพ?",o:["polite","corridor","prescription"],a:0},{q:"Guests ___ eat food in their rooms.",o:["must","has to","mustn't"],a:2}],
  order:[{w:["Guests must","be back","by nine o'clock."],a:"Guests must be back by nine o'clock."},{w:["Guests mustn't","eat food","in their rooms."],a:"Guests mustn't eat food in their rooms."},
   {w:["We mustn't","use mobile phones","in class."],a:"We mustn't use mobile phones in class."},{w:["We must","wear","school uniforms."],a:"We must wear school uniforms."},{w:["You mustn't","touch","the paintings."],a:"You mustn't touch the paintings."}]
 };
@@ -200,17 +200,17 @@ R["8.7"]={
   L("Wrap up","สรุป",[["Ask for permission politely.","ขออนุญาตอย่างสุภาพ"],["Say yes / say no.","ตอบรับ / ปฏิเสธ"]])],
  ws:{title:"Asking for Permission",parts:[
   {k:"mcq",n:"เลือกประโยคที่สุภาพและถูกต้องที่สุด",items:[
-   {q:"You want to borrow your teacher's pen.",o:["Give me your pen.","Could I borrow your pen, please?","I want your pen."],a:1},{q:"You want to open the window.",o:["Do you mind if I open the window?","Open the window.","I will open it."],a:0},
-   {q:"You want to ask about a school trip rule.",o:["Are we allowed to wear jeans?","Do we must wear jeans?","Are we allow wear jeans?"],a:0}]},
+   {q:"You want to borrow your teacher's pen.",o:["Give me your pen.","Could I borrow your pen, please?","I want your pen."],a:1},{q:"You want to open the window.",o:["Open the window.","I will open it.","Do you mind if I open the window?"],a:2},
+   {q:"You want to ask about a school trip rule.",o:["Are we allow wear jeans?","Are we allowed to wear jeans?","Do we must wear jeans?"],a:1}]},
   {k:"match",n:"จับคู่คำถามกับคำตอบ",ord:[4,2,0,1,3],items:[["Can I use your tablet, please?","Yes, of course."],["Are we allowed to wear jeans?","No, you aren't."],["Do we have to bring a packed lunch?","Yes, you do."],["May I go to the toilet?","Sure, go ahead."],["Do you mind if I open the window?","No, not at all."]]},
   {k:"fill",n:"เลือกคำจากกรอบเติมคำถามขออนุญาต",bank:["May","Can","Could","Do","Are"],items:[
    {q:"___ I ask a question, please?",a:"May"},{q:"___ I borrow your pen? (to a friend)",a:"Can"},{q:"___ you mind if I sit here?",a:"Do"},{q:"___ we allowed to take photos in the museum?",a:"Are"},{q:"___ I leave early, please?",a:"Could"}]},
   {k:"write",n:"เขียนคำถามขออนุญาตสำหรับแต่ละสถานการณ์ (ตอบอิสระ)",items:["1. You want to use your friend's eraser: ____________________?","2. You want to know if you can eat in class: ____________________?","3. You want to know if you have to wear a uniform on the trip: ____________________?"]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"Which question is the most polite?",o:["Could I borrow your pen, please?","Give me your pen.","I want your pen."],a:0},{q:"Do you mind if I sit here? — ___",o:["No, not at all.","Yes, of course.","I'm sorry, you are."],a:0,ex:"No, not at all. = ไม่ขัดข้อง นั่งได้เลย"},
-  {q:"Do we have to bring a packed lunch? — No, ___.",o:["you don't","you aren't","you can't"],a:0},{q:"Which one asks about a school rule?",o:["Are we allowed to wear jeans?","Can I borrow a pen?","May I sit down?"],a:0},
-  {q:"Which word means หูฟัง?",o:["headphones","packed lunch","permission"],a:0},{q:"“I'm afraid not.” means …",o:["ขออภัย ไม่ได้","ได้แน่นอน","ฉันกลัว"],a:0},
-  {q:"___ I use your tablet, please? (the most informal)",o:["Can","Would","Do"],a:0},{q:"Could I leave early, please? — ___",o:["Yes, of course.","Yes, I do.","No, I'm not."],a:0}],
+ mcq:[{q:"Which question is the most polite?",o:["Could I borrow your pen, please?","Give me your pen.","I want your pen."],a:0},{q:"Do you mind if I sit here? — ___",o:["Yes, of course.","I'm sorry, you are.","No, not at all."],a:2,ex:"No, not at all. = ไม่ขัดข้อง นั่งได้เลย"},
+  {q:"Do we have to bring a packed lunch? — No, ___.",o:["you can't","you don't","you aren't"],a:1},{q:"Which one asks about a school rule?",o:["Are we allowed to wear jeans?","Can I borrow a pen?","May I sit down?"],a:0},
+  {q:"Which word means หูฟัง?",o:["packed lunch","permission","headphones"],a:2},{q:"“I'm afraid not.” means …",o:["ฉันกลัว","ขออภัย ไม่ได้","ได้แน่นอน"],a:1},
+  {q:"___ I use your tablet, please? (the most informal)",o:["Can","Would","Do"],a:0},{q:"Could I leave early, please? — ___",o:["Yes, I do.","No, I'm not.","Yes, of course."],a:2}],
  order:[{w:["Can I","use your tablet,","please?"],a:"Can I use your tablet, please?"},{w:["Are we allowed","to wear","jeans?"],a:"Are we allowed to wear jeans?"},
   {w:["Do we have to","bring","a packed lunch?"],a:"Do we have to bring a packed lunch?"},{w:["Do you mind","if I","open the window?"],a:"Do you mind if I open the window?"},{w:["Where do we","have to","meet?"],a:"Where do we have to meet?"}]
 };
@@ -317,10 +317,10 @@ R["8.11"]={
   {k:"order",n:"เรียงคำให้เป็นประโยคที่ถูกต้อง",items:[{w:["Pick up","your football boots,","please."],a:"Pick up your football boots, please."},{w:["Do I have to","tidy up","now?"],a:"Do I have to tidy up now?"},{w:["You have to","set","the table."],a:"You have to set the table."}]},
   {k:"write",n:"เขียนประโยคพ่อแม่และวัยรุ่น (ตอบอิสระ)",items:["Parent: You have to ____________________.","Parent: You mustn't ____________________.","Teenager: Do I have to ____________________?"]}]},
  games:["match","quiz","simon","mcq","order"],
- mcq:[{q:"Why is Jake's mum angry?",o:["His bedroom is a mess.","He doesn't like football.","He is late for school."],a:0},{q:"Jake ___ leave his socks on the floor.",o:["mustn't","must","doesn't have to"],a:0},
-  {q:"What must Jake pick up?",o:["His football boots","His books","His plates"],a:0},{q:"Which sentence is correct?",o:["Jake has to set the table.","Jake have to set the table.","Jake has to sets the table."],a:0},
-  {q:"Which word means งานบ้าน?",o:["chore","corridor","canteen"],a:0},{q:"“Tidy up your room” means …",o:["เก็บห้องให้เรียบร้อย","ทาสีห้อง","ออกจากห้อง"],a:0},
-  {q:"Do I have to tidy up now? — Yes, ___.",o:["you do","you are","you must to"],a:0},{q:"Which chore uses a broom?",o:["Sweep the floor","Iron clothes","Wash dishes"],a:0}],
+ mcq:[{q:"Why is Jake's mum angry?",o:["His bedroom is a mess.","He doesn't like football.","He is late for school."],a:0},{q:"Jake ___ leave his socks on the floor.",o:["must","doesn't have to","mustn't"],a:2},
+  {q:"What must Jake pick up?",o:["His plates","His football boots","His books"],a:1},{q:"Which sentence is correct?",o:["Jake has to set the table.","Jake have to set the table.","Jake has to sets the table."],a:0},
+  {q:"Which word means งานบ้าน?",o:["corridor","canteen","chore"],a:2},{q:"“Tidy up your room” means …",o:["ออกจากห้อง","เก็บห้องให้เรียบร้อย","ทาสีห้อง"],a:1},
+  {q:"Do I have to tidy up now? — Yes, ___.",o:["you do","you are","you must to"],a:0},{q:"Which chore uses a broom?",o:["Iron clothes","Wash dishes","Sweep the floor"],a:2}],
  order:[{w:["Please","tidy up","your room."],a:"Please tidy up your room."},{w:["You mustn't","leave your socks","on the floor."],a:"You mustn't leave your socks on the floor."},{w:["Do I have to","tidy up","now?"],a:"Do I have to tidy up now?"},
   {w:["You have to","set","the table."],a:"You have to set the table."},{w:["Pick up","your football boots,","please."],a:"Pick up your football boots, please."}]
 };
@@ -340,12 +340,12 @@ R["8.12"]={
  ws:{title:"Role Play: Parents and Teenagers",parts:[
   {k:"match",n:"จับคู่คำศัพท์กับความหมาย",ord:[3,5,4,1,0,2],items:[["strict","เข้มงวด"],["tired","เหนื่อย"],["boring","น่าเบื่อ"],["busy","ยุ่ง"],["advantages","ข้อดี"],["disadvantages","ข้อเสีย"]]},
   {k:"sort",n:"เขียนข้อความลงในช่องที่ถูกต้อง",boxes:[{h:"Advantages of sharing jobs",items:["life is easier for everyone","everyone learns to be responsible","the family has more free time"]},{h:"Disadvantages",items:["teenagers may feel tired","there is less time for homework","some chores are boring"]}]},
-  {k:"mcq",n:"Empathy หรือ sympathy?",items:[{q:"“I know how you feel. I was tired after school too.”",o:["empathy","sympathy"],a:0},{q:"“Oh dear, I'm sorry you're tired.”",o:["empathy","sympathy"],a:1},{q:"Empathy means …",o:["feeling with someone","feeling angry","feeling bored"],a:0}]},
+  {k:"mcq",n:"Empathy หรือ sympathy?",items:[{q:"“I know how you feel. I was tired after school too.”",o:["empathy","sympathy"],a:0},{q:"“Oh dear, I'm sorry you're tired.”",o:["sympathy","empathy"],a:0},{q:"Empathy means …",o:["feeling bored","feeling with someone","feeling angry"],a:1}]},
   {k:"write",n:"แต่งบทสนทนาสั้น ๆ (ตอบอิสระ)",items:["Teenager: Do I really have to ____________________ today?","Parent: We have rules in this house. You have to ____________________.","Teenager: But I'm ____________________.","Parent: I understand. I need your help."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"“We have rules in this house.” means …",o:["ในบ้านเรามีกฎ","เรามีบ้านหลายหลัง","เราไม่มีกฎ"],a:0},{q:"Which word means เข้มงวด?",o:["strict","busy","boring"],a:0},{q:"Sharing jobs makes life ___ for everyone.",o:["easier","harder","slower"],a:0},
-  {q:"“I understand. I was tired too.” shows …",o:["empathy","sympathy"],a:0},{q:"Which is an advantage of sharing jobs?",o:["Life is easier for everyone.","Some chores are boring.","Teenagers feel tired."],a:0},
-  {q:"Which is a disadvantage?",o:["There is less time for homework.","The family has more free time.","Everyone learns to be responsible."],a:0},{q:"Do I really have to wash the dishes today? — The parent says: …",o:["Yes, you do. We have rules in this house.","No, you mustn't.","Yes, you are."],a:0},
+ mcq:[{q:"“We have rules in this house.” means …",o:["ในบ้านเรามีกฎ","เรามีบ้านหลายหลัง","เราไม่มีกฎ"],a:0},{q:"Which word means เข้มงวด?",o:["busy","boring","strict"],a:2},{q:"Sharing jobs makes life ___ for everyone.",o:["slower","easier","harder"],a:1},
+  {q:"“I understand. I was tired too.” shows …",o:["empathy","sympathy"],a:0},{q:"Which is an advantage of sharing jobs?",o:["Some chores are boring.","Teenagers feel tired.","Life is easier for everyone."],a:2},
+  {q:"Which is a disadvantage?",o:["Everyone learns to be responsible.","There is less time for homework.","The family has more free time."],a:1},{q:"Do I really have to wash the dishes today? — The parent says: …",o:["Yes, you do. We have rules in this house.","No, you mustn't.","Yes, you are."],a:0},
   {q:"“Oh dear, I'm sorry you're so tired.” shows …",o:["sympathy","empathy"],a:0}],
  order:[{w:["Do I really","have to","wash the dishes","today?"],a:"Do I really have to wash the dishes today?"},{w:["We have","rules","in this house."],a:"We have rules in this house."},{w:["Everyone","shares","jobs."],a:"Everyone shares jobs."},
   {w:["Sharing jobs","makes life easier","for everyone","in the family."],a:"Sharing jobs makes life easier for everyone in the family."}]
@@ -398,10 +398,10 @@ R["8.14"]={
   {k:"order",n:"เรียงคำให้เป็นข้อบังคับที่ถูกต้อง",items:[{w:["Please","switch off","your phone."],a:"Please switch off your phone."},{w:["You mustn't","take photos","in the cinema."],a:"You mustn't take photos in the cinema."},{w:["Students","don't have to","tie their hair."],a:"Students don't have to tie their hair."}]},
   {k:"write",n:"เขียนข้อบังคับ (ตอบอิสระ)",items:["• Students must ____________________.","• Students mustn't ____________________.","• Students don't have to ____________________.","Rules for the cinema:  • Please ____________________."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"What is a polite way to write a rule?",o:["Please switch off your phone.","Switch off your phone now!","Phone off."],a:0},{q:"Which sentence is formal?",o:["Students must wear a uniform.","Wear your uniform, OK?","You'd better wear it."],a:0},
-  {q:"Where can you see “You mustn't take photos”?",o:["In a cinema","In a canteen","At a bus stop"],a:0},{q:"What does a teaching assistant do?",o:["Helps the teacher","Cooks lunch","Drives the bus"],a:0},
-  {q:"A bullet point is …",o:["a dot (•) before each item","a type of bullet","a long paragraph"],a:0},{q:"Students ___ tie their hair. It's not a rule.",o:["don't have to","mustn't","must"],a:0},
-  {q:"Which word means การอนุมัติ?",o:["approval","earn","formal"],a:0},{q:"Which sentence is correct?",o:["Students must wear a uniform.","Students musts wear a uniform.","Students must to wear a uniform."],a:0}],
+ mcq:[{q:"What is a polite way to write a rule?",o:["Please switch off your phone.","Switch off your phone now!","Phone off."],a:0},{q:"Which sentence is formal?",o:["Wear your uniform, OK?","You'd better wear it.","Students must wear a uniform."],a:2},
+  {q:"Where can you see “You mustn't take photos”?",o:["At a bus stop","In a cinema","In a canteen"],a:1},{q:"What does a teaching assistant do?",o:["Helps the teacher","Cooks lunch","Drives the bus"],a:0},
+  {q:"A bullet point is …",o:["a type of bullet","a long paragraph","a dot (•) before each item"],a:2},{q:"Students ___ tie their hair. It's not a rule.",o:["must","don't have to","mustn't"],a:1},
+  {q:"Which word means การอนุมัติ?",o:["approval","earn","formal"],a:0},{q:"Which sentence is correct?",o:["Students musts wear a uniform.","Students must to wear a uniform.","Students must wear a uniform."],a:2}],
  order:[{w:["Please","switch off","your phone."],a:"Please switch off your phone."},{w:["You mustn't","take photos","in the cinema."],a:"You mustn't take photos in the cinema."},{w:["Students","don't have to","tie their hair."],a:"Students don't have to tie their hair."},
   {w:["Students must","wear","a uniform."],a:"Students must wear a uniform."},{w:["You must","be quiet","in the library."],a:"You must be quiet in the library."}]
 };
@@ -421,14 +421,14 @@ R["8.15"]={
   {k:"fill",n:"เลือกคำจากกรอบเติมให้ถูกต้อง",bank:["laptop","headphones","basket","permission","invite","tidy up"],items:[
    {q:"You can use your ___ when you listen to music.",a:"headphones"},{q:"Put your dirty clothes in the ___.",a:"basket"},{q:"Please ask for ___ before you use my things.",a:"permission"},
    {q:"We must ___ the room every day.",a:"tidy up"},{q:"You can ___ a friend, but ask first.",a:"invite"},{q:"You can't use my ___ without asking.",a:"laptop"}]},
-  {k:"mcq",n:"เลือกประโยคที่ตรงกับความหมาย",items:[{q:"Which sentence is polite?",o:["Please switch off the lights.","Switch off the lights now.","You switch off lights!"],a:0},{q:"Which rule means ไม่จำเป็นต้องทำ?",o:["We don't have to tidy up every day.","We mustn't tidy up.","We must tidy up every day."],a:0},{q:"Which rule means ห้ามทำ?",o:["You mustn't use my laptop.","You can use my laptop.","You don't have to use my laptop."],a:0}]},
+  {k:"mcq",n:"เลือกประโยคที่ตรงกับความหมาย",items:[{q:"Which sentence is polite?",o:["Please switch off the lights.","Switch off the lights now.","You switch off lights!"],a:0},{q:"Which rule means ไม่จำเป็นต้องทำ?",o:["We mustn't tidy up.","We must tidy up every day.","We don't have to tidy up every day."],a:2},{q:"Which rule means ห้ามทำ?",o:["You don't have to use my laptop.","You mustn't use my laptop.","You can use my laptop."],a:1}]},
   {k:"order",n:"เรียงคำให้เป็นข้อตกลงที่ถูกต้อง",items:[{w:["You mustn't","use my laptop","without permission."],a:"You mustn't use my laptop without permission."},{w:["Please","switch off","the lights."],a:"Please switch off the lights."},{w:["You can","invite friends,","but ask first."],a:"You can invite friends, but ask first."}]},
   {k:"write",n:"เขียนข้อตกลงห้องพักของกลุ่มคุณ (ตอบอิสระ)",items:["1. We must ____________________.","2. We mustn't ____________________.","3. We don't have to ____________________.","4. You can ____________________.","5. Please ____________________."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"Which sentence is polite?",o:["Please switch off the lights.","Switch off the lights now.","You switch off lights!"],a:0},{q:"You ___ use my laptop without permission.",o:["mustn't","must","don't have to"],a:0},
-  {q:"We ___ tidy up every day. We can do it on Saturday.",o:["don't have to","mustn't","must"],a:0},{q:"Which word means หอพัก?",o:["dormitory","basket","permission"],a:0},
-  {q:"“You can invite friends, but ask first.” means …",o:["เชิญเพื่อนได้ แต่ต้องถามก่อน","เชิญเพื่อนไม่ได้","เพื่อนไม่ต้องถาม"],a:0},{q:"Where do you put dirty clothes?",o:["In a basket","In a laptop","In headphones"],a:0},
-  {q:"Please ___ the lights when you leave the room.",o:["switch off","switch in","switch up"],a:0},{q:"Which phrase starts a presentation of a rule?",o:["Our rule number 1 is …","Rule is number our …","Number 1 rule our …"],a:0}],
+ mcq:[{q:"Which sentence is polite?",o:["Please switch off the lights.","Switch off the lights now.","You switch off lights!"],a:0},{q:"You ___ use my laptop without permission.",o:["must","don't have to","mustn't"],a:2},
+  {q:"We ___ tidy up every day. We can do it on Saturday.",o:["must","don't have to","mustn't"],a:1},{q:"Which word means หอพัก?",o:["dormitory","basket","permission"],a:0},
+  {q:"“You can invite friends, but ask first.” means …",o:["เชิญเพื่อนไม่ได้","เพื่อนไม่ต้องถาม","เชิญเพื่อนได้ แต่ต้องถามก่อน"],a:2},{q:"Where do you put dirty clothes?",o:["In headphones","In a basket","In a laptop"],a:1},
+  {q:"Please ___ the lights when you leave the room.",o:["switch off","switch in","switch up"],a:0},{q:"Which phrase starts a presentation of a rule?",o:["Rule is number our …","Number 1 rule our …","Our rule number 1 is …"],a:2}],
  order:[{w:["You mustn't","use my laptop","without permission."],a:"You mustn't use my laptop without permission."},{w:["Please","switch off","the lights."],a:"Please switch off the lights."},{w:["We don't have to","tidy up","every day."],a:"We don't have to tidy up every day."},
   {w:["You can","use headphones","when you listen to music."],a:"You can use headphones when you listen to music."},{w:["You can","invite friends,","but ask first."],a:"You can invite friends, but ask first."}]
 };

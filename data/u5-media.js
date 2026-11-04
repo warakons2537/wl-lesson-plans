@@ -21,8 +21,8 @@ R["5.1"]={
   {k:"fill",n:"เลือก This is หรือ These are",bank:["This is","These are"],items:[{q:"___ eggs.",a:"These are"},{q:"___ a sandwich.",a:"This is"},{q:"___ chips.",a:"These are"},{q:"___ an apple.",a:"This is"},{q:"___ cherries.",a:"These are"},{q:"___ ice cream.",a:"This is"}]},
   {k:"write",n:"เขียนประโยค (ตอบอิสระ)",items:["I like ____________________ and ____________________.","This is ____________________. It belongs to ____________________.","These are ____________________."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"Which one is a dairy product?",o:["cheese","steak","carrots"],a:0},{q:"Which one is protein?",o:["fish","rice","apple"],a:0},{q:"Which one is a carbohydrate?",o:["toast","eggs","yoghurt"],a:0},{q:"These are ___.",o:["chips","pizza","ice cream"],a:0},
-  {q:"This is ___.",o:["an apple","cherries","chips"],a:0},{q:"I'm a hot drink. I'm made from leaves. What am I?",o:["tea","fruit juice","yoghurt"],a:0},{q:"I'm cold and sweet. I belong to dairy products. What am I?",o:["ice cream","steak","salad"],a:0},{q:"I'm red and small. I grow on trees. What am I?",o:["cherries","carrots","cheese"],a:0}],
+ mcq:[{q:"Which one is a dairy product?",o:["cheese","steak","carrots"],a:0},{q:"Which one is protein?",o:["rice","apple","fish"],a:2},{q:"Which one is a carbohydrate?",o:["yoghurt","toast","eggs"],a:1},{q:"These are ___.",o:["chips","pizza","ice cream"],a:0},
+  {q:"This is ___.",o:["cherries","chips","an apple"],a:2},{q:"I'm a hot drink. I'm made from leaves. What am I?",o:["yoghurt","tea","fruit juice"],a:1},{q:"I'm cold and sweet. I belong to dairy products. What am I?",o:["ice cream","steak","salad"],a:0},{q:"I'm red and small. I grow on trees. What am I?",o:["carrots","cheese","cherries"],a:2}],
  order:[{w:["This is","a sandwich."],a:"This is a sandwich."},{w:["These are","my favourite","chips."],a:"These are my favourite chips."},{w:["I like","fish and chips."],a:"I like fish and chips."},{w:["Cheese belongs to","the dairy products","group."],a:"Cheese belongs to the dairy products group."},{w:["What","am I?"],a:"What am I?"}]
 };
 R["5.2"]={
@@ -43,9 +43,9 @@ R["5.2"]={
   {k:"fill",n:"เลือกคำจากกรอบเติมให้ถูกต้อง",bank:["like","love","prefer","don't like"],items:[{q:"I ___ pizza. It's my favourite food!",a:"love"},{q:"I ___ tea to coffee.",a:"prefer"},{q:"I ___ fish. It smells bad.",a:"don't like"},{q:"I ___ apples. They are OK.",a:"like"}]},
   {k:"write",n:"ตอบคำถาม (ตอบอิสระ)",items:["What kind of appetizer do you like? — I ____________________.","For the dessert, we chose ____________________ because ____________________."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"Which course comes first?",o:["appetizer","dessert","main dish"],a:0},{q:"Which course is sweet?",o:["dessert","appetizer","main dish"],a:0},{q:"I ___ pizza! It's my favourite.",o:["love","don't like","prefer to"],a:0},
-  {q:"I ___ tea to coffee.",o:["prefer","love to","like to"],a:0},{q:"“I prefer tea to coffee.” means …",o:["ชอบชามากกว่ากาแฟ","ชอบกาแฟมากกว่าชา","ไม่ชอบทั้งสองอย่าง"],a:0},{q:"What kind of appetizer do you like? — I like ___.",o:["salad","ice cream","steak"],a:0,ex:"salad เป็น appetizer"},
-  {q:"Where do you order food and drinks?",o:["In a cafe","In a library","In a bank"],a:0},{q:"“I don't like fish.” means …",o:["ฉันไม่ชอบปลา","ฉันชอบปลา","ฉันกินปลาทุกวัน"],a:0}],
+ mcq:[{q:"Which course comes first?",o:["appetizer","dessert","main dish"],a:0},{q:"Which course is sweet?",o:["appetizer","main dish","dessert"],a:2},{q:"I ___ pizza! It's my favourite.",o:["prefer to","love","don't like"],a:1},
+  {q:"I ___ tea to coffee.",o:["prefer","love to","like to"],a:0},{q:"“I prefer tea to coffee.” means …",o:["ชอบกาแฟมากกว่าชา","ไม่ชอบทั้งสองอย่าง","ชอบชามากกว่ากาแฟ"],a:2},{q:"What kind of appetizer do you like? — I like ___.",o:["steak","salad","ice cream"],a:1,ex:"salad เป็น appetizer"},
+  {q:"Where do you order food and drinks?",o:["In a cafe","In a library","In a bank"],a:0},{q:"“I don't like fish.” means …",o:["ฉันชอบปลา","ฉันกินปลาทุกวัน","ฉันไม่ชอบปลา"],a:2}],
  order:[{w:["What kind of","appetizer","do you like?"],a:"What kind of appetizer do you like?"},{w:["I prefer","tea","to coffee."],a:"I prefer tea to coffee."},{w:["But I","don't like","fish."],a:"But I don't like fish."},{w:["For the dessert,","we chose","ice cream."],a:"For the dessert, we chose ice cream."}]
 };
 R["5.3"]={
@@ -66,8 +66,8 @@ R["5.3"]={
   {k:"order",n:"เรียงคำให้เป็นประโยคที่ถูกต้อง",items:[{w:["He","always has","cereal","for breakfast."],a:"He always has cereal for breakfast."},{w:["He","never eats","cake","before a race."],a:"He never eats cake before a race."},{w:["He","often eats","fish","for dinner."],a:"He often eats fish for dinner."}]},
   {k:"write",n:"เขียนเกี่ยวกับตัวเอง (ตอบอิสระ)",items:["I always ____________________.","I usually ____________________.","I never ____________________."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"What is Tom's job?",o:["He is a swimmer.","He is a cook.","He is a doctor."],a:0},{q:"What does Tom always have for breakfast?",o:["Cereal","Fish","Cake"],a:0},{q:"What does Tom never eat before a race?",o:["Cake","Fruit","Cereal"],a:0},
-  {q:"Tom often eats ___ for dinner.",o:["fish","ice cream","cereal"],a:0},{q:"What is his Sunday treat?",o:["An ice cream","A salad","A sandwich"],a:0},{q:"“always” means …",o:["ทุกครั้ง","ไม่เคย","บางครั้ง"],a:0},{q:"“hungry” means …",o:["หิว","อิ่ม","เหนื่อย"],a:0},{q:"Which sentence is correct?",o:["I never eat cake.","I eat never cake.","Never I eat cake."],a:0}],
+ mcq:[{q:"What is Tom's job?",o:["He is a swimmer.","He is a cook.","He is a doctor."],a:0},{q:"What does Tom always have for breakfast?",o:["Fish","Cake","Cereal"],a:2},{q:"What does Tom never eat before a race?",o:["Cereal","Cake","Fruit"],a:1},
+  {q:"Tom often eats ___ for dinner.",o:["fish","ice cream","cereal"],a:0},{q:"What is his Sunday treat?",o:["A salad","A sandwich","An ice cream"],a:2},{q:"“always” means …",o:["บางครั้ง","ทุกครั้ง","ไม่เคย"],a:1},{q:"“hungry” means …",o:["หิว","อิ่ม","เหนื่อย"],a:0},{q:"Which sentence is correct?",o:["I eat never cake.","Never I eat cake.","I never eat cake."],a:2}],
  order:[{w:["He","always has","cereal","for breakfast."],a:"He always has cereal for breakfast."},{w:["He","never eats","cake","before a race."],a:"He never eats cake before a race."},{w:["I","usually eat","some cereal."],a:"I usually eat some cereal."},{w:["On Sundays","he has","a treat."],a:"On Sundays he has a treat."}]
 };
 R["5.4"]={
@@ -87,8 +87,8 @@ R["5.4"]={
   {k:"order",n:"เรียงคำให้เป็นประโยคที่ถูกต้อง",items:[{w:["I always","eat","breakfast."],a:"I always eat breakfast."},{w:["She is","never","late."],a:"She is never late."},{w:["How often","do you","eat fast food?"],a:"How often do you eat fast food?"}]},
   {k:"write",n:"เขียนประโยคเกี่ยวกับตัวเอง (ตอบอิสระ)",items:["I always ____________________.","I never ____________________.","I sometimes ____________________.","You should ____________________."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"She ___ eats breakfast. (100%)",o:["always","never","rarely"],a:0},{q:"Which sentence is correct?",o:["I always eat breakfast.","I eat always breakfast.","Always I eat breakfast."],a:0},{q:"Which sentence is correct?",o:["He is never late.","He never is late.","He is late never."],a:0},
-  {q:"Do you have ___ milk?",o:["any","some","a"],a:0},{q:"“rarely” means …",o:["แทบไม่เคย","ทุกวัน","บ่อย ๆ"],a:0},{q:"Which has the lowest frequency?",o:["never","sometimes","often"],a:0},{q:"You ___ eat more vegetables. (advice)",o:["should","shouldn't","never"],a:0},{q:"We don't have ___ sugar.",o:["any","some","a lot"],a:0}],
+ mcq:[{q:"She ___ eats breakfast. (100%)",o:["always","never","rarely"],a:0},{q:"Which sentence is correct?",o:["I eat always breakfast.","Always I eat breakfast.","I always eat breakfast."],a:2},{q:"Which sentence is correct?",o:["He is late never.","He is never late.","He never is late."],a:1},
+  {q:"Do you have ___ milk?",o:["any","some","a"],a:0},{q:"“rarely” means …",o:["ทุกวัน","บ่อย ๆ","แทบไม่เคย"],a:2},{q:"Which has the lowest frequency?",o:["often","never","sometimes"],a:1},{q:"You ___ eat more vegetables. (advice)",o:["should","shouldn't","never"],a:0},{q:"We don't have ___ sugar.",o:["some","a lot","any"],a:2}],
  order:[{w:["I always","eat","breakfast."],a:"I always eat breakfast."},{w:["She is","never","late."],a:"She is never late."},{w:["How often","do you","eat fast food?"],a:"How often do you eat fast food?"},{w:["I don't have","any","milk."],a:"I don't have any milk."},{w:["You should","eat more","vegetables."],a:"You should eat more vegetables."}]
 };
 R["5.5"]={
@@ -110,8 +110,8 @@ R["5.5"]={
    {q:"It's Mai's birthday. We have ___ tonight.",a:"a party"},{q:"I'm hungry at 4 pm. I have ___, like fruit.",a:"a snack"},{q:"We eat with our family at 7 pm. We have ___.",a:"dinner"}]},
   {k:"write",n:"ตอบคำถาม (ตอบอิสระ)",items:["What do you have for breakfast? — I ____________________.","Have you got any ____________________? — Yes, I have. / No, I haven't."]}]},
  games:["match","quiz","mcq","order"],
- mcq:[{q:"Which expression means “rest from work”?",o:["have a break","have lunch","have a snack"],a:0},{q:"What do you have for breakfast? — I usually have ___.",o:["toast and eggs","a break","a party"],a:0},{q:"“have a party” means …",o:["จัดงานเลี้ยง","กินอาหารกลางวัน","พักเบรก"],a:0},{q:"Ben usually has ___ for breakfast.",o:["toast and eggs","pizza","ice cream"],a:0},
-  {q:"“greedy” means …",o:["ตะกละ","ใจดี","หิว"],a:0},{q:"Pim says: “Let me taste.” She wants to …",o:["try the food","cook the food","buy the food"],a:0},{q:"Have you got any sandwiches? — Yes, ___.",o:["I have","I do","I am"],a:0},{q:"A small meal between lunch and dinner is …",o:["a snack","a party","a break"],a:0}],
+ mcq:[{q:"Which expression means “rest from work”?",o:["have a break","have lunch","have a snack"],a:0},{q:"What do you have for breakfast? — I usually have ___.",o:["a break","a party","toast and eggs"],a:2},{q:"“have a party” means …",o:["พักเบรก","จัดงานเลี้ยง","กินอาหารกลางวัน"],a:1},{q:"Ben usually has ___ for breakfast.",o:["toast and eggs","pizza","ice cream"],a:0},
+  {q:"“greedy” means …",o:["ใจดี","หิว","ตะกละ"],a:2},{q:"Pim says: “Let me taste.” She wants to …",o:["buy the food","try the food","cook the food"],a:1},{q:"Have you got any sandwiches? — Yes, ___.",o:["I have","I do","I am"],a:0},{q:"A small meal between lunch and dinner is …",o:["a party","a break","a snack"],a:2}],
  order:[{w:["What do you","have for","breakfast?"],a:"What do you have for breakfast?"},{w:["I usually","have","toast and eggs."],a:"I usually have toast and eggs."},{w:["Have you got","any sandwiches","today?"],a:"Have you got any sandwiches today?"},{w:["Don't","be","greedy!"],a:"Don't be greedy!"}]
 };
 R["5.6"]={
